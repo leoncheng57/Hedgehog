@@ -26,7 +26,22 @@ INSERT MOTTO HERE (something witty about quills meaning hedgehog quills and writ
 
 ## What is Hedgehog?
 Hedgehog is an easy to use and comprehensive study guide tool. It draws on information from a variety of sources and its wide pool of users. With Hedgehog, users can now effortlessly create their ideal study guide by choosing snippets of information from public user-created general study guides. They are also able to contribute their own knowledge where they see fit. Hedgehog will even sift through specific academic websites to facilitate searching for relevant information.
+<br>
 <i>THIS WILL BE IMPROVED LATER</i>
+
+## Features
+- Login system
+- Public study guides
+- Private study guides
+- Organize by topic and subtopics
+- Hedgehog will search for relevant info when adding to study
+
+## Extras for later
+- Mnemonic generator
+  - generates an interesting sentence based on an equation/acronym it is given
+  - MAYBE pictures
+
+Things are subject to change
 
 ## Research Sources
 - http://khanacademy.org/
