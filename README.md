@@ -39,9 +39,9 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 ## Extras for later
 - Mnemonic generator
   - generates an interesting sentence based on an equation/acronym it is given
-  - MAYBE pictures
+  - maybe pictures
 
-Things are subject to change
+<i>Things are subject to change</i>
 
 ## Research Sources
 - http://khanacademy.org/
@@ -50,3 +50,6 @@ Things are subject to change
 - http://www.appracticeexams.com/
 - http://hyperphysics.phy-astr.gsu.edu/hbase/hph.html
 - http://www.wolframalpha.com/
+
+# Pictures
+- http://orig03.deviantart.net/9719/f/2009/163/e/6/hedgehog_on_toilet_by_pineapple_pocky.gif
