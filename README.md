@@ -49,6 +49,12 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 - http://hyperphysics.phy-astr.gsu.edu/hbase/hph.html
 - http://www.wolframalpha.com/
 - http://quizlet.com
+- https://www.wikipedia.org/
+- http://regentsprep.org/
+- https://www.purplemath.com/
+- https://www.mathsisfun.com/
+- http://www.maa.org/
+- https://stuyaristastudysheets.wordpress.com/
 
 # TO-DO
 - [ ] Assisted Search
