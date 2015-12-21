@@ -64,7 +64,7 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 - [ ] Storage System
  - [ ] Plain Text / Markdown Word Processor
  - [ ] Organized by Topics and Private Groups
- - [ ] (All user created)
+ - [ ] All user created
 - [ ] Mnemonic Generator
   - [ ] Generate Random Words
   - [ ] Make it sound like a sentence
