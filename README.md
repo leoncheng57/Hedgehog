@@ -56,6 +56,13 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 - http://www.maa.org/
 - https://stuyaristastudysheets.wordpress.com/
 
+## Friendly Comments
+- This looks really useful -- study guides are always scattered around. The way Hedgehog searches academic papers to generate relevant info as well would be helpful to check and find out more reliable info. I think the mnemonic generator is a really cool idea too, hopefully that'll make it in. -Kathy Wang
+
+- This would be awesome to prepare for any test! The sifting through entire academic websites seems very tough. As an alternative you could ask the user for a url of info and keywords to look for. Then using regex you could just pull out only the important info. -Javis Wu
+
+- This looks like a great way to make studying a lot easier. It would also provide a very customized studying experience, and I think it would be good to alllow users to enter their own sites to parse for information. - Ishraq Bhuiyan
+
 # TO-DO
 - [ ] Assisted Search
   - [ ] Compile a Specific Set of Outside Research Sources
