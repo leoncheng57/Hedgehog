@@ -7,9 +7,10 @@
 {% block content %}
 
 <h1>Search</h1>
-<input type="text" name="search">
-<input type="submit" />
-
-
+<form method = "POST">
+  <input type = "text" name ="searchTerm">
+  <p/>
+  <input type="submit" name="button" value="search">
+</form>
 
 {% endblock %}

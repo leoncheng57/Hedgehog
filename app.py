@@ -7,20 +7,25 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/search")
+@app.route("/search", methods=["GET","POST"])
 def search():
-    q = request.args.get('search')
-    text = None
-    message = None
-    if q:
-        q = q.strip()
-        text = ''
-        for n in range(5):
-            url = google.search(q, num = 5, start = 0, stop = 5, pause=2.0).next()
-            page = google.get_page(url)
-            print(url);
-            soup = bs4.BeautifulSoup(page)
-    return render_template("search.html")
+    if request.method == "GET":
+        return render_template("search.html")
+    else:
+        searchTerm = request.form["searchTerm"]
+        return searchTerm
+        # q = request.args.get('search')
+        # text = None
+        # message = None
+        # if q:
+        #     q = q.strip()
+        #     text = ''
+        #     for n in range(5):
+        #         url = google.search(q, num = 5, start = 0, stop = 5, pause=2.0).next()
+        #         page = google.get_page(url)
+        #         print(url);
+        #         soup = bs4.BeautifulSoup(page)
+        # return render_template("search.html")
 
 
 if __name__ == '__main__':
