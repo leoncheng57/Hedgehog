@@ -13,20 +13,14 @@ def search():
         return render_template("search.html")
     else:
         searchTerm = request.form["searchTerm"]
-        return searchTerm
-        # q = request.args.get('search')
-        # text = None
-        # message = None
-        # if q:
-        #     q = q.strip()
-        #     text = ''
-        #     for n in range(5):
-        #         url = google.search(q, num = 5, start = 0, stop = 5, pause=2.0).next()
-        #         page = google.get_page(url)
-        #         print(url);
-        #         soup = bs4.BeautifulSoup(page)
-        # return render_template("search.html")
-
+        q = searchTerm
+        if q:
+            print q
+            l = []
+            results = google.search(q,num=10,start=0,stop=10)
+            for url in results:
+                l.append(url)
+            return str(l)
 
 if __name__ == '__main__':
     app.debug = True
