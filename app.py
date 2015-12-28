@@ -28,12 +28,17 @@ def search():
         if q:
             print q
             l = []
-            results = google.search(q,num=10,start=0,stop=None)
+            results = google.search(q,num=10,start=0,stop=25)
             for url in results:
-                l.append(url)
-                if ( len(l) >=10 ):
+                for src in srcs:
+                    if url.find(src)!=-1:
+                        l.append(url)
+                if ( len(l) >=2 ):
                     break
-            return str(l)
+            message = ""
+            if (len(l)<2):
+                message = "Timed Out: More results would take too long"
+            return render_template("links.html", links=l, message=message)
 
 if __name__ == '__main__':
     app.debug = True

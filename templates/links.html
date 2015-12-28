@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Index{% endblock %}
+
+
+{% block content %}
+
+<h1>Links</h1>
+
+{% for link in links %}
+<a href="{{link}}">{{link}}</a>
+<br>
+{% endfor %}
+
+{% if message!="" %}
+<i>{{message}}</i>
+{% endif %}
+<br>
+
+<br><br>
+<a href="/">Back to Index</a>
+
+{% endblock %}
