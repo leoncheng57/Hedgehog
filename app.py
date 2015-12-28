@@ -33,8 +33,6 @@ def search():
                 for src in srcs:
                     if url.find(src)!=-1:
                         l.append(url)
-                if ( len(l) >=2 ):
-                    break
             message = ""
             if (len(l)<2):
                 message = "Timed Out: More results would take too long"
