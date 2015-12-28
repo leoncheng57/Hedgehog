@@ -3,6 +3,18 @@ import os.path, google, urllib2, bs4, re
 
 app = Flask(__name__)
 
+#Putting all Outside Sources into list 'srcs'
+f = open("Sources.txt", "r")
+srcs = []
+for line in f:
+    line = line[0:-1] #-1 is to remove the newline character
+    line = line.replace("https","")
+    line = line.replace("http","")
+    line = line.replace("//","")
+    line = line.replace(":","")
+    line = line.replace("www.","")
+    srcs.append(line)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -12,14 +24,15 @@ def search():
     if request.method == "GET":
         return render_template("search.html")
     else:
-        searchTerm = request.form["searchTerm"]
-        q = searchTerm
+        q = request.form["searchTerm"]
         if q:
             print q
             l = []
-            results = google.search(q,num=10,start=0,stop=10)
+            results = google.search(q,num=10,start=0,stop=None)
             for url in results:
                 l.append(url)
+                if ( len(l) >=10 ):
+                    break
             return str(l)
 
 if __name__ == '__main__':

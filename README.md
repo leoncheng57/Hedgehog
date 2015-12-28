@@ -41,21 +41,6 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
   - generates an interesting sentence based on an equation/acronym it is given
   - maybe pictures
 
-## Outside Research Sources
-- http://khanacademy.org/
-- http://midnightswan.com/twilight/Midnight+Swan%3A+The+Student+Network
-- https://www.youtube.com/user/crashcourse
-- http://www.appracticeexams.com/
-- http://hyperphysics.phy-astr.gsu.edu/hbase/hph.html
-- http://www.wolframalpha.com/
-- http://quizlet.com
-- https://www.wikipedia.org/
-- http://regentsprep.org/
-- https://www.purplemath.com/
-- https://www.mathsisfun.com/
-- http://www.maa.org/
-- https://stuyaristastudysheets.wordpress.com/
-
 ## Friendly Comments
 - This looks really useful -- study guides are always scattered around. The way Hedgehog searches academic papers to generate relevant info as well would be helpful to check and find out more reliable info. I think the mnemonic generator is a really cool idea too, hopefully that'll make it in. -Kathy Wang
 
