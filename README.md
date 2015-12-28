@@ -54,7 +54,8 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 - https://code.google.com/p/simplenlg/wiki/Section5
 - http://web.mit.edu/course/6/6.863/tools/tregex/javadoc/edu/stanford/nlp/ling/Sentence.html
 - https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&es_th=1&ie=UTF-8&client=ubuntu&q=create%20a%20sentence%20api&oq=create%20a%20sentence%20api&aqs=chrome.0.69i59j0l5.1873j0j1
--
+- https://pythonhosted.org/google/
+
 
 # TO-DO
 - [ ] Assisted Search
