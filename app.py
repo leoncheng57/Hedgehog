@@ -19,6 +19,11 @@ for line in f:
 def index():
     return render_template('homepage.html')
 
+@app.route('/datas')
+@app.route('/datas/')
+def datas():
+    return render_template('datas.html')
+
 @app.route("/search", methods=["GET","POST"])
 def search():
     if request.method == "GET":

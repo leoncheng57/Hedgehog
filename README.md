@@ -77,3 +77,6 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
   - [ ] Make it sound like a sentence
   - [ ] Find relevant pictures
   - [ ] Maybe Design it like a meme
+
+<!-- This is how you add images to GitHub Readme... -->
+ ![alt tag](https://i.kinja-img.com/gawker-media/image/upload/s--pEKSmwzm--/c_scale,fl_progressive,q_80,w_800/1414228815325188681.jpg)
