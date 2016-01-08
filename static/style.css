@@ -4,3 +4,19 @@
       font-family: 'Josefin Sans', sans-serif;
    (the sans-serif is a backup font, just in case)
 */
+
+body{
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 15px;
+}
+
+.intro {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 10em;
+}
+
+.blue_bground {
+      background-color: #24495E;
+}
