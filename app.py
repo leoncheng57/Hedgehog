@@ -19,8 +19,8 @@ for line in f:
 def index():
     return render_template('homepage.html')
 
-@app.route('/datas')
-@app.route('/datas/')
+@app.route('/datas', methods=["GET"])
+@app.route('/datas/', methods=["GET"])
 def datas():
     return render_template('datas.html')
 

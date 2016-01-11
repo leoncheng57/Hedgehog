@@ -5,5 +5,12 @@
 
 
 {% block content %}
-DATAS!
+<h1>DATAS!</h1>
+<form method="GET">
+  Search Tags: <input type="text" name="tag" placeholder="v ug7eri" />
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='search.js') }}">
 {% endblock %}
