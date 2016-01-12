@@ -30,6 +30,10 @@
       height: 100vh;
 }
 
+h1 {
+      font-weight: 900;
+}
+
 .login {
       background-color: #34495E;
       color: #E4F1FE;
@@ -46,11 +50,32 @@
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
 }
 
-.username {
-      background-image: url("../static/username.png");
-      background-repeat: no-repeat;
+input[type=text],
+input[type=password]{
+      background-color: white;
       padding: 5px;
       padding-left: 25px;
-      width: 260px;
+      width: 300px;
       color: black;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      border: none;
+}
+
+.username {
+      background: url("../static/username.png") left center no-repeat;
+}
+
+.password {
+      background: url("../static/password.png") left center no-repeat;
+}
+
+input[type=submit]{
+      color: black;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      padding: 5px 15px;
+      font-size: 14px;
 }
