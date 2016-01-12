@@ -6,11 +6,9 @@
 
 {% block content %}
 <h1>DATAS!</h1>
-<form method="GET">
-  Search Tags: <input type="text" name="tag" placeholder="v ug7eri" />
-</form>
+Search Tags: <input id="tag-search" type="text" name="tag" placeholder="v ug7eri" />
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='search.js') }}">
+<script src="{{ url_for('static', filename='search.js') }}"></script>
 {% endblock %}

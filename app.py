@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, session, url_for
-import os.path, google, urllib2, bs4, re
+from flask import Flask, Response, render_template, request, redirect, session, url_for
+import os.path, google, urllib2, bs4, re, database
+from bson import json_util
 
 app = Flask(__name__)
 
@@ -24,7 +25,14 @@ def index():
 def datas():
     return render_template('datas.html')
 
+@app.route('/request', methods=["GET"])
+@app.route('/request/', methods=["GET"])
+def request_api():
+    return Response(response=json_util.dumps(database.get_all_tags()),
+    status=200, mimetype='application/json')
+
 @app.route("/search", methods=["GET","POST"])
+@app.route("/search/", methods=["GET","POST"])
 def search():
     if request.method == "GET":
         return render_template("search.html")
