@@ -1,38 +1,40 @@
-from flask import Flask, Response, render_template, request, redirect, session, url_for
-import os.path, google, urllib2, bs4, re, database, search
 from bson import json_util
+import database, search
+import flask, os.path
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 def jsonResponse(data):
-    return Response(response=json_util.dumps(data),
+    return flask.Response(response=json_util.dumps(data),
         status=200, mimetype='application/json')
+
+# Views
 
 @app.route('/')
 def index():
-    return render_template('homepage.html')
+    return flask.render_template('homepage.html')
 
 @app.route('/api/<data>', methods=["GET", "POST"])
 @app.route('/api/<data>/', methods=["GET", "POST"])
 def api(data):
-    return "WIP"
+    return str(dir(flask.request))
 
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
 def datas():
-    return render_template('database_admin.html')
+    return flask.render_template('database_admin.html')
 
 @app.route('/home')
 @app.route('/home/')
 def home():
-    return render_template('home.html')
+    return flask.render_template('home.html')
 
 ###
 
 @app.route('/request', methods=["GET"])
 @app.route('/request/', methods=["GET"])
 def request_api():
-    return_type = request.args.get('type')
+    return_type = flask.request.args.get('type')
     if return_type == 'tags':
         data = database.get_all_tags()
     elif return_type == 'info':
@@ -42,7 +44,9 @@ def request_api():
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
 def search_page():
-    return search.default(request.method, request.form.get('searchTerm'))
+    return search.default(flask.request.method, flask.request.form.get('searchTerm'))
+
+# Main Method
 
 if __name__ == '__main__':
     app.debug = True

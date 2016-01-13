@@ -1,5 +1,5 @@
 from flask import render_template
-import google
+import google, urllib2, bs4, re
 
 #Putting all Outside Sources into list 'srcs'
 f = open("Sources.txt", "r")
