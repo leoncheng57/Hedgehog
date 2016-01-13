@@ -11,16 +11,23 @@ def jsonResponse(data):
 @app.route('/')
 def index():
     return render_template('homepage.html')
-    
+
+@app.route('/api/<data>', methods=["GET", "POST"])
+@app.route('/api/<data>/', methods=["GET", "POST"])
+def api(data):
+    return "WIP"
+
+@app.route('/database', methods=["GET"])
+@app.route('/database/', methods=["GET"])
+def datas():
+    return render_template('database_admin.html')
+
 @app.route('/home')
 @app.route('/home/')
 def home():
     return render_template('home.html')
 
-@app.route('/datas', methods=["GET"])
-@app.route('/datas/', methods=["GET"])
-def datas():
-    return render_template('datas.html')
+###
 
 @app.route('/request', methods=["GET"])
 @app.route('/request/', methods=["GET"])
