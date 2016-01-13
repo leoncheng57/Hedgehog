@@ -32,7 +32,12 @@ def datas():
 @app.route('/request', methods=["GET"])
 @app.route('/request/', methods=["GET"])
 def request_api():
-    return Response(response=json_util.dumps(database.get_all_tags()),
+    return_type = request.args.get('type')
+    if return_type == 'tags':
+        data = database.get_all_tags()
+    elif return_type == 'info':
+        data = database.get_top_level_tags() # Eheh, need another function to put here...
+    return Response(response=json_util.dumps(data),
     status=200, mimetype='application/json')
 
 @app.route("/search", methods=["GET","POST"])

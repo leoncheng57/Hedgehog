@@ -1,15 +1,20 @@
-document.getElementById('tag-search').addEventListener('keyup', function(e) {tagSearch(e)});
+document.getElementById('tags-search').addEventListener('keyup', function(e) {queryDatabase(e, 'tags')});
+document.getElementById('info-search').addEventListener('keyup', function(e) {queryDatabase(e, 'info')});
 
-function tagSearch(e) {
+function queryDatabase(e, type) {
   if (e.keyCode == 13) {
-    console.log("I got: " + e.target.value)
     $.ajax({
       type: 'GET',
       url: '/request/',
-      contentType: 'application/json',
+      data: {type: type},
+      accepts: 'application/json',
       success: function(data) {
-        console.log(data);
+        $('#' + type + '-search-results').empty();
+        $.each(data, function(i, item) {
+          $('#' + type + '-search-results').append(
+            $('<li>').append(item.name + ' (' + item._id.$oid + ')'));
+        });
       }
-    })
+    });
   }
 }
