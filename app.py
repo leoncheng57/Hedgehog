@@ -19,6 +19,10 @@ for line in f:
 @app.route('/')
 def index():
     return render_template('homepage.html')
+    
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/datas', methods=["GET"])
 @app.route('/datas/', methods=["GET"])
