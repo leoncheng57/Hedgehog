@@ -1,26 +1,19 @@
 from flask import Flask, Response, render_template, request, redirect, session, url_for
-import os.path, google, urllib2, bs4, re, database
+import os.path, google, urllib2, bs4, re, database, search
 from bson import json_util
 
 app = Flask(__name__)
 
-#Putting all Outside Sources into list 'srcs'
-f = open("Sources.txt", "r")
-srcs = []
-for line in f:
-    line = line[0:-1] #-1 is to remove the newline character
-    line = line.replace("https","")
-    line = line.replace("http","")
-    line = line.replace("//","")
-    line = line.replace(":","")
-    line = line.replace("www.","")
-    srcs.append(line)
+def jsonResponse(data):
+    return Response(response=json_util.dumps(data),
+        status=200, mimetype='application/json')
 
 @app.route('/')
 def index():
     return render_template('homepage.html')
     
 @app.route('/home')
+@app.route('/home/')
 def home():
     return render_template('home.html')
 
@@ -37,28 +30,12 @@ def request_api():
         data = database.get_all_tags()
     elif return_type == 'info':
         data = database.get_top_level_tags() # Eheh, need another function to put here...
-    return Response(response=json_util.dumps(data),
-    status=200, mimetype='application/json')
+    return jsonResponse(data)
 
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
-def search():
-    if request.method == "GET":
-        return render_template("search.html")
-    else:
-        q = request.form["searchTerm"]
-        if q:
-            print q
-            l = []
-            results = google.search(q,num=10,start=0,stop=25)
-            for url in results:
-                for src in srcs:
-                    if url.find(src)!=-1:
-                        l.append(url)
-            message = ""
-            if (len(l)<2):
-                message = "Timed Out: More results would take too long"
-            return render_template("links.html", links=l, message=message)
+def search_page():
+    return search.default(request.method, request.form.get('searchTerm'))
 
 if __name__ == '__main__':
     app.debug = True
