@@ -45,10 +45,10 @@
     <center>
       <h1>Become a Quill Today!</h1>
       <br>
-      <form id="register" method="POST">
-        <input type="text" class="username" name="usersign" placeholder="Username (i.e. JohnDoe123)">
+      <form id="register" method="POST" action="{{ url_for('api', action='register') }}">
+        <input type="text" class="username" name="username" placeholder="Username (i.e. JohnDoe123)">
         <br><br>
-        <input type="password" class="password" name="passsign" placeholder="Password (i.e. **********)">
+        <input type="password" class="password" name="password" placeholder="Password (i.e. **********)">
         <br><br>
         <input type="password" class="password" name="passrepeat" placeholder="Repeat Password">
         <br><br>

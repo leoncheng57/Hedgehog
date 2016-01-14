@@ -8,5 +8,5 @@ if (loginForm) loginForm.submit( function(e) {
 });
 
 if (registerForm) registerForm.submit( function(e) {
-  e.preventDefault();
+  // e.preventDefault();
 });

@@ -51,12 +51,19 @@ def api(action):
                 response = flask.redirect('/')
                 response.set_cookie('hedgehog', json_util.dumps(check))
                 return response
-        if action == 'logout':
+        elif action == 'logout':
             s['logged_in'] = False
             s['id'] = s['user'] = None
             response = flask.redirect('/')
             response.set_cookie('hedgehog', max_age=0)
             return response
+        elif action == 'register':
+            check = database.create_user(r.form.get('username'),
+                r.form.get('password'))
+            if check == False:
+                return "User already exists."
+            else:
+                return flask.redirect('/')
     flask.abort(400)
 
 @app.route('/database', methods=["GET"])
