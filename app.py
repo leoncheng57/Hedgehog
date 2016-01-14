@@ -33,6 +33,9 @@ def index():
 def api(action):
     if action == 'java':
         flask.abort(418)
+    if request.method == 'GET':
+        if action == 'tags':
+            return json_response(database.get_all_tags())
     if request.method == 'POST':
         if action == 'login':
             check = database.verify_user(request.form.get('username'),
