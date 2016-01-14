@@ -4,57 +4,62 @@
 
 {% block content %}
 <div class="home">
-    <nav class="navbar navbar-inverse navbar-static-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="pull-left navbar-brand" href="#" onclick="homepage()">
-                    <img src="../static/title.png"
-                    height="30px">
-                </a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" id="signup" onclick="signup()">Sign Up</a></li>
-                <li><a href="#" id="signin" onclick="signin()">Sign In</a></li>
-                <li><a href="#" id="about" onclick="about()">About</a></li>
-                <li>
-                    <p class="navbar-btn">
-                        <a href="/home" class="btn btn-default">Testing home</a>
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <img src="../static/hedgehog.png"
-        class="intro"
-        id="intro">
-    <div class="login">
-        <center>
-            <h1>Login</h1>
-            <br>
-            <form>
-                <input type="text" class="username" name="username" placeholder="Username (i.e. JohnDoe123)">
-                <br><br>
-                <input type="password" class="password" name="password" placeholder="Password (i.e. *********)">
-                <br><br>
-                <input type="submit" value="Login">
-            </form>
-        </center>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a id="logo" href="javascript:;" class="pull-left navbar-brand">
+          <img src="{{ url_for('static', filename='img/logo.png') }}"
+          height="30px">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript:;" id="signup">Sign Up</a></li>
+        <li><a href="javascript:;" id="signin">Sign In</a></li>
+        <li><a href="javascript:;" id="about">About</a></li>
+        <li>
+          <p class="navbar-btn">
+            <a href="{{ url_for('home') }}" class="btn btn-default">Testing home</a>
+          </p>
+        </li>
+      </ul>
     </div>
-    <div class="signup">
-        <center>
-            <h1>Become a Quill Today!</h1>
-            <br>
-            <form>
-                <input type="text" class="username" name="usersign" placeholder="Username (i.e. JohnDoe123)">
-                <br><br>
-                <input type="password" class="password" name="passsign" placeholder="Password (i.e. **********)">
-                <br><br>
-                <input type="password" class="password" name="passrepeat" placeholder="Repeat Password">
-                <br><br>
-                <input type="submit" value="Sign Up">
-            </form>
-        </center>
-    </div>
+  </nav>
+  <img src="{{ url_for('static', filename='img/splash.png') }}"
+    class="intro"
+    id="intro"
+    style="display:none;">
+  <div class="login" style="display:none;">
+    <center>
+      <h1>Login</h1>
+      <br>
+      <form id="login">
+        <input type="text" class="username" name="username" placeholder="Username (i.e. JohnDoe123)">
+        <br><br>
+        <input type="password" class="password" name="password" placeholder="Password (i.e. *********)">
+        <br><br>
+        <input type="submit" value="Login">
+      </form>
+    </center>
+  </div>
+  <div class="signup" style="display:none;">
+    <center>
+      <h1>Become a Quill Today!</h1>
+      <br>
+      <form id="register">
+        <input type="text" class="username" name="usersign" placeholder="Username (i.e. JohnDoe123)">
+        <br><br>
+        <input type="password" class="password" name="passsign" placeholder="Password (i.e. **********)">
+        <br><br>
+        <input type="password" class="password" name="passrepeat" placeholder="Repeat Password">
+        <br><br>
+        <input type="submit" value="Sign Up">
+      </form>
+    </center>
+  </div>
 </div>
+{% endblock %}
 
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/hedge.js') }}"></script>
+<script src="{{ url_for('static', filename='js/user.js') }}"></script>
 {% endblock %}

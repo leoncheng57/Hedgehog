@@ -1,50 +1,50 @@
-from bson import json_util
 import database, search
+
+from functools import wraps
+
 import flask, os.path
+from bson import json_util
 
 app = flask.Flask(__name__)
+render = flask.render_template
+session = flask.session
+request = flask.request
 
-def jsonResponse(data):
+def json_response(data):
     return flask.Response(response=json_util.dumps(data),
         status=200, mimetype='application/json')
+
+def require_login(view):
+    @wraps(view)
+    def decorated(*args, **kwds):
+        if session.get('logged_in') == True:
+            return view
+        return flask.redirect('/')
+    return decorated
 
 # Views
 
 @app.route('/')
 def index():
-    return flask.render_template('homepage.html')
-
-@app.route('/api/<data>', methods=["GET", "POST"])
-@app.route('/api/<data>/', methods=["GET", "POST"])
-def api(data):
-    return str(dir(flask.request))
+    return render('homepage.html')
 
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
-def datas():
-    return flask.render_template('database_admin.html')
+@require_login
+def data():
+    return render('database_admin.html')
+
+###
 
 @app.route('/home')
 @app.route('/home/')
 def home():
-    return flask.render_template('home.html')
-
-###
-
-@app.route('/request', methods=["GET"])
-@app.route('/request/', methods=["GET"])
-def request_api():
-    return_type = flask.request.args.get('type')
-    if return_type == 'tags':
-        data = database.get_all_tags()
-    elif return_type == 'info':
-        data = database.get_top_level_tags() # Eheh, need another function to put here...
-    return jsonResponse(data)
+    return render('home.html')
 
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
 def search_page():
-    return search.default(flask.request.method, flask.request.form.get('searchTerm'))
+    return search.default(request.method, request.form.get('searchTerm'))
 
 # Main Method
 

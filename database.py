@@ -1,6 +1,8 @@
+import time
+
+import pymongo
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson.objectid import ObjectId
-import pymongo, time, json
 
 client = pymongo.MongoClient()
 db = client.hedgehog
