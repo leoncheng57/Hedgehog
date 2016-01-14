@@ -1,4 +1,4 @@
-import database, search
+import database
 
 from functools import wraps
 
@@ -31,7 +31,7 @@ def index():
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
 @require_login
-def data():
+def database_admin():
     return render('database_admin.html')
 
 ###
