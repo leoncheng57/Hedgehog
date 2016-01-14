@@ -1,59 +1,91 @@
-from flask import Flask, Response, render_template, request, redirect, session, url_for
-import os.path, google, urllib2, bs4, re, database
+import database
+
+from functools import wraps
+
+import flask, os.path
 from bson import json_util
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
+render = flask.render_template
+s = flask.session
+r = flask.request
 
-#Putting all Outside Sources into list 'srcs'
-f = open("Sources.txt", "r")
-srcs = []
-for line in f:
-    line = line[0:-1] #-1 is to remove the newline character
-    line = line.replace("https","")
-    line = line.replace("http","")
-    line = line.replace("//","")
-    line = line.replace(":","")
-    line = line.replace("www.","")
-    srcs.append(line)
+def json_response(data):
+    return flask.Response(response=json_util.dumps(data),
+        status=200, mimetype='application/json')
+
+def require_login(view):
+    @wraps(view)
+    def checked(*args, **kwds):
+        if s.get('logged_in') == True:
+            return view()
+        return flask.abort(403)
+    return checked
+
+# Views
 
 @app.route('/')
 def index():
-    return render_template('homepage.html')
-    
+    return render('homepage.html')
+
+@app.route('/api/<action>', methods=["GET", "POST"])
+@app.route('/api/<action>/', methods=["GET", "POST"])
+def api(action):
+    if action == 'java':
+        flask.abort(418)
+    if r.method == 'GET':
+        if action == 'tags':
+            return json_response(database.get_all_tags())
+    if r.method == 'POST':
+        if action == 'login':
+            check = database.verify_user(r.form.get('username'),
+                r.form.get('password'))
+            if check == None:
+                return "No such username."
+            elif check == False:
+                return "Incorrect password."
+            else:
+                s['logged_in'] = True # Should we store these three values (commonly accessed and modified together) in a dict or something?
+                s['id'] = check.get('id')
+                s['user'] = check.get('user')
+                response = flask.redirect('/')
+                response.set_cookie('hedgehog', json_util.dumps(check))
+                return response
+        elif action == 'logout':
+            s['logged_in'] = False
+            s['id'] = s['user'] = None
+            response = flask.redirect('/')
+            response.set_cookie('hedgehog', max_age=0)
+            return response
+        elif action == 'register':
+            check = database.create_user(r.form.get('username'),
+                r.form.get('password'))
+            if check == False:
+                return "User already exists."
+            else:
+                return flask.redirect('/')
+    flask.abort(400)
+
+@app.route('/database', methods=["GET"])
+@app.route('/database/', methods=["GET"])
+@require_login
+def database_admin():
+    return render('database_admin.html', user=s.get('user'))
+
+
+###
+
 @app.route('/home')
+@app.route('/home/')
 def home():
-    return render_template('home.html')
-
-@app.route('/datas', methods=["GET"])
-@app.route('/datas/', methods=["GET"])
-def datas():
-    return render_template('datas.html')
-
-@app.route('/request', methods=["GET"])
-@app.route('/request/', methods=["GET"])
-def request_api():
-    return Response(response=json_util.dumps(database.get_all_tags()),
-    status=200, mimetype='application/json')
+    return render('home.html')
 
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
-def search():
-    if request.method == "GET":
-        return render_template("search.html")
-    else:
-        q = request.form["searchTerm"]
-        if q:
-            print q
-            l = []
-            results = google.search(q,num=10,start=0,stop=25)
-            for url in results:
-                for src in srcs:
-                    if url.find(src)!=-1:
-                        l.append(url)
-            message = ""
-            if (len(l)<2):
-                message = "Timed Out: More results would take too long"
-            return render_template("links.html", links=l, message=message)
+def search_page():
+    return search.default(r.method, r.form.get('searchTerm'))
+
+# Main Method
 
 if __name__ == '__main__':
     app.debug = True

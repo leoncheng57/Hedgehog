@@ -1,6 +1,8 @@
+import time
+
+import pymongo
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson.objectid import ObjectId
-import pymongo, time, json
 
 client = pymongo.MongoClient()
 db = client.hedgehog
@@ -73,9 +75,13 @@ def create_user(username, password):
     return True
 
 def verify_user(username, password):
-    return check_password_hash(
-        users.find_one({'username': username})['password'], password
-    )
+    user = users.find_one({'username': username})
+    if user:
+        if check_password_hash(user['password'], password):
+            return {'id': str(user.get('_id')),
+                'user': str(user.get('username'))}
+        return False
+    return None
 
 # Linkage functions
 def link_tag_to_info(tag_id, info_list):

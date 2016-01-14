@@ -1,27 +1,25 @@
-$(document).ready(function() {
-    console.log("loaded");
-    $(".intro").hide().fadeIn(1000);
-    $(".login").hide();
-    $(".signup").hide();
-});
+$(".intro").fadeIn(1000);
 
-function homepage(){
+$('#logo').click( function homepage() {
     $(".login").fadeOut(1000);
     $(".signup").fadeOut(1000);
     $(".intro").fadeIn(1000);
-}
-function signin(){
+});
+
+$('#signin').click( function signin() {
     $(".intro").fadeOut(1000);
     $(".signup").fadeOut(1000);
     $(".login").fadeIn(1000);
-}
-function signup(){
+});
+
+$('#signup').click( function signup() {
     $(".login").fadeOut(1000);
     $(".intro").fadeOut(1000);
     $(".signup").fadeIn(1000);
-}
-function about(){
+});
+
+$('#about').click( function about() {
     $(".login").fadeOut(1000);
     $(".intro").fadeOut(1000);
     $(".signup").fadeOut(1000);
-}
+});
