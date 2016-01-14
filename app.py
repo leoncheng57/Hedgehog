@@ -16,11 +16,11 @@ def json_response(data):
 
 def require_login(view):
     @wraps(view)
-    def decorated(*args, **kwds):
+    def checked(*args, **kwds):
         if session.get('logged_in') == True:
-            return view
-        return flask.redirect('/')
-    return decorated
+            return view()
+        return flask.abort(403)
+    return checked
 
 # Views
 
@@ -28,11 +28,40 @@ def require_login(view):
 def index():
     return render('homepage.html')
 
+@app.route('/api/<action>', methods=["GET", "POST"])
+@app.route('/api/<action>/', methods=["GET", "POST"])
+def api(action):
+    if action == 'java':
+        flask.abort(418)
+    if request.method == 'POST':
+        if action == 'login':
+            check = database.verify_user(request.form.get('username'),
+                request.form.get('password'))
+            if check == None:
+                return "No such username."
+            elif check == False:
+                return "Incorrect password."
+            else:
+                session['logged_in'] = True
+                session['id'] = check.get('id')
+                session['user'] = check.get('user')
+                response = flask.redirect('/')
+                response.set_cookie('hedgehog', json_util.dumps(check))
+                return response
+        if action == 'logout':
+            session['logged_in'] = False
+            session['id'] = session['user'] = None
+            response = flask.redirect('/')
+            response.set_cookie('hedgehog', max_age=0)
+            return response
+    flask.abort(400)
+
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
 @require_login
 def database_admin():
-    return render('database_admin.html')
+    return render('database_admin.html', user=session.get('user'))
+
 
 ###
 
