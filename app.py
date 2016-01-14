@@ -18,7 +18,7 @@ def require_login(view):
     @wraps(view)
     def checked(*args, **kwds):
         if s.get('logged_in') == True:
-            return view()
+            return view(*args, **kwds)
         return flask.abort(403)
     return checked
 
@@ -30,6 +30,7 @@ def index():
 
 @app.route('/api/<action>', methods=["GET", "POST"])
 @app.route('/api/<action>/', methods=["GET", "POST"])
+@require_login
 def api(action):
     if action == 'java':
         flask.abort(418)
