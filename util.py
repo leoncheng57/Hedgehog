@@ -1,13 +1,16 @@
-class UserAbstraction(object):
-    def __init__(self, session):
-        self.s = session
-    
+class BaseAbstraction(object):
     def __getattr__(self, name):
-        f = UserAbstraction.__dict__.get('_UserAbstraction__' + name)
+        c = self.__class__
+        f = c.__dict__.get(
+            '_' + c.__name__ + '__' + name)
         if f:
             return f(self) 
         raise AttributeError(
-            "'UserAbstraction' object has no attribute '"+ name + "'")
+            "'" + c.__name__ + "' object has no attribute '" + name + "'")
+
+class UserAbstraction(BaseAbstraction):
+    def __init__(self, session):
+        self.s = session
     
     def __logged_in(self): # Temp, not how I wanna store it in the long run.
         user = self.s.get('logged_in')
