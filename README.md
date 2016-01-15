@@ -1,6 +1,8 @@
 # Hedgehog
 INSERT MOTTO HERE (something witty about quills meaning hedgehog quills and writing quills)
 
+ ![alt tag](static/img/splash.png)
+
                     .-                                        
                    . +                                          _    _ ______ _____   _____ ______
                  . / +`+`/      .``..` `                       | |  | |  ____|  __ \ / ____|  ____|
@@ -58,11 +60,6 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 
 
 # TO-DO
-- [ ] Assisted Search
-  - [ ] Compile a Specific Set of Outside Research Sources
-  - [ ] Put as a sidebar on the side of the plaintext editor
-  - [ ] Maybe search through google for links, then parse links to only accept those that are on our good list of Outside Research Sources
-  - [ ] Maybe use APIs of study sites (ex. Wikipedia) or use page scraping to get info from any study site website
 - [ ] Login System
   - [ ] Private Groups/Classes/Organizations
 - [ ] Topic Organization System
@@ -72,11 +69,13 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
  - [ ] Plain Text / Markdown Word Processor
  - [ ] Organized by Topics and Private Groups
  - [ ] All user created
+- [ ] Assisted Search
+  - [ ] Compile a Specific Set of Outside Research Sources
+  - [ ] Put as a sidebar on the side of the plaintext editor
+  - [ ] Maybe search through google for links, then parse links to only accept those that are on our good list of Outside Research Sources
+  - [ ] Maybe use APIs of study sites (ex. Wikipedia) or use page scraping to get info from any study site website
 - [ ] Mnemonic Generator
   - [ ] Generate Random Words
   - [ ] Make it sound like a sentence
   - [ ] Find relevant pictures
   - [ ] Maybe Design it like a meme
-
-<!-- This is how you add images to GitHub Readme... -->
- ![alt tag](static/hedgehog.png)
