@@ -1,4 +1,4 @@
-import database
+import database, util
 
 from functools import wraps
 
@@ -6,6 +6,7 @@ import flask, os.path
 from bson import json_util
 
 app = flask.Flask(__name__)
+user = util.UserAbstraction(flask.session)
 render = flask.render_template
 s = flask.session
 r = flask.request
@@ -17,13 +18,12 @@ def json_response(data):
 def require_login(view):
     @wraps(view)
     def checked(*args, **kwds):
-        if s.get('logged_in') == True:
+        if user.logged_in == True:
             return view(*args, **kwds)
         flask.abort(403)
     return checked
 
 # Views
-
 @app.route('/')
 def index():
     return render('homepage.html')
