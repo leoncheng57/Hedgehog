@@ -28,6 +28,23 @@ def require_login(view):
 def index():
     return render('homepage.html')
 
+@app.route('/home')
+@app.route('/home/')
+def home():
+    return render('home.html')
+
+@app.route('/database', methods=["GET"])
+@app.route('/database/', methods=["GET"])
+@require_login
+def database_admin():
+    return render('database_admin.html', user=user.name)
+
+@app.route("/search", methods=["GET","POST"])
+@app.route("/search/", methods=["GET","POST"])
+def search_page():
+    return search.default(r.method, r.form.get('searchTerm'))
+
+# API
 @app.route('/api/<action>', methods=["GET", "POST"])
 @app.route('/api/<action>/', methods=["GET", "POST"])
 def api(action):
@@ -61,27 +78,7 @@ def api(action):
                 return flask.redirect('/')
     flask.abort(400)
 
-@app.route('/database', methods=["GET"])
-@app.route('/database/', methods=["GET"])
-@require_login
-def database_admin():
-    return render('database_admin.html', user=user.name)
-
-
-###
-
-@app.route('/home')
-@app.route('/home/')
-def home():
-    return render('home.html')
-
-@app.route("/search", methods=["GET","POST"])
-@app.route("/search/", methods=["GET","POST"])
-def search_page():
-    return search.default(r.method, r.form.get('searchTerm'))
-
 # Main Method
-
 if __name__ == '__main__':
     app.debug = True
     app.secret_key = '895uvq_09ta834_xna_2847vt3v9o3u8tw948t5e'
