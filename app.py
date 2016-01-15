@@ -18,7 +18,7 @@ def json_response(data):
 def require_login(view):
     @wraps(view)
     def checked(*args, **kwds):
-        if user.logged_in == True:
+        if user.logged_in:
             return view(*args, **kwds)
         flask.abort(403)
     return checked
@@ -38,27 +38,22 @@ def api(action):
             return json_response(database.get_all_tags())
     if r.method == 'POST':
         if action == 'login':
-            check = database.verify_user(r.form.get('username'),
+            check = user.log_in(r.form.get('username'),
                 r.form.get('password'))
             if check == None:
                 return "No such username."
-            elif check == False:
+            if check == False:
                 return "Incorrect password."
-            else:
-                s['logged_in'] = True # Should we store these three values (commonly accessed and modified together) in a dict or something?
-                s['id'] = check.get('id')
-                s['user'] = check.get('user')
-                response = flask.redirect('/')
-                response.set_cookie('hedgehog', json_util.dumps(check))
-                return response
-        elif action == 'logout':
-            s['logged_in'] = False
-            s['id'] = s['user'] = None
+            response = flask.redirect('/')
+            response.set_cookie('hedgehog', json_util.dumps(check))
+            return response
+        if action == 'logout':
+            user.log_out()
             response = flask.redirect('/')
             response.set_cookie('hedgehog', max_age=0)
             return response
-        elif action == 'register':
-            check = database.create_user(r.form.get('username'),
+        if action == 'register':
+            check = user.create(r.form.get('username'),
                 r.form.get('password'))
             if check == False:
                 return "User already exists."
@@ -70,7 +65,7 @@ def api(action):
 @app.route('/database/', methods=["GET"])
 @require_login
 def database_admin():
-    return render('database_admin.html', user=s.get('user'))
+    return render('database_admin.html', user=user.name)
 
 
 ###

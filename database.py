@@ -74,12 +74,12 @@ def create_user(username, password):
         return False
     return True
 
-def verify_user(username, password):
+def check_user(username, password):
     user = users.find_one({'username': username})
     if user:
         if check_password_hash(user['password'], password):
             return {'id': str(user.get('_id')),
-                'user': str(user.get('username'))}
+                'name': str(user.get('username'))}
         return False
     return None
 

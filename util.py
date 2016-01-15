@@ -1,3 +1,5 @@
+import database
+
 class BaseAbstraction(object):
     def __getattr__(self, name):
         c = self.__class__
@@ -12,8 +14,36 @@ class UserAbstraction(BaseAbstraction):
     def __init__(self, session):
         self.s = session
     
-    def __logged_in(self): # Temp, not how I wanna store it in the long run.
-        user = self.s.get('logged_in')
+    def __logged_in(self):
+        user = self.s.get('user')
         if user:
-            return user == True
+            return user.get('logged_in') == True
         return False
+    
+    def __name(self):
+        user = self.s.get('user')
+        if user:
+            return user.get('name')
+    
+    def __id(self):
+        user = self.s.get('user')
+        if user:
+            return user.get('id')
+    
+    def create(self, username, password):
+        return database.create_user(username, password)
+    
+    def log_in(self, username, password):
+        check = database.check_user(username, password)
+        if check == None: # WIPit
+            return None
+        if check == False:
+            return False
+        self.s['user'] = {
+            'name': check.get('name'),
+            'id': check.get('id'),
+            'logged_in': True}
+        return check
+    
+    def log_out(self):
+        self.s['user'] = None
