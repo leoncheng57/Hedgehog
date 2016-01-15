@@ -1,7 +1,7 @@
 # Hedgehog
 INSERT MOTTO HERE (something witty about quills meaning hedgehog quills and writing quills)
 
- ![alt tag](static/img/splash.png)
+<center>![alt tag](static/img/splash.png)</center>
 
                     .-                                        
                    . +                                          _    _ ______ _____   _____ ______
