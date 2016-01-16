@@ -1,6 +1,6 @@
-var loginForm = $('#login')
-var registerForm = $('#register')
-var signoutButton = $('#signout')
+var loginForm = $('#login');
+var registerForm = $('#register');
+var signoutButton = $('#signout');
 
 // Assumedly, we're gonna stick some form validation in here.
 
@@ -12,6 +12,7 @@ if (registerForm) registerForm.submit( function(e) {
   // e.preventDefault();
 });
 
-if (signoutButton) signoutButton.submit( function(e) {
-  e.target.submit();
+if (signoutButton) signoutButton.click( function(e) {
+  console.log("Well this...");
+  $('<form action="/api/logout/" method="POST">').submit();
 });
