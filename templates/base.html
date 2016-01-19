@@ -2,15 +2,37 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
   <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
   <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a id="logo" href="javascript:;" class="pull-left navbar-brand">
+          <img src="{{ url_for('static', filename='img/logo.png') }}"
+          height="30px">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript:;" id="signup">Sign Up</a></li>
+        <li><a href="javascript:;" id="signin">Sign In</a></li>
+        <li><a href="javascript:;" id="signout">Sign Out</a></li>
+        <li><a href="javascript:;" id="about">About</a></li>
+        <li><a href="javascript:;" id="team">Team</a></li>
+        <li>
+          <p class="navbar-btn">
+            <a href="{{ url_for('home') }}" class="btn btn-default">Testing home</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </nav>
   {% block content %}{% endblock %}
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"
     charset="utf-8"></script>

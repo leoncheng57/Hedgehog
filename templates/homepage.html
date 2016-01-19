@@ -4,28 +4,6 @@
 
 {% block content %}
 <div class="home">
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a id="logo" href="javascript:;" class="pull-left navbar-brand">
-          <img src="{{ url_for('static', filename='img/logo.png') }}"
-          height="30px">
-        </a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:;" id="signup">Sign Up</a></li>
-        <li><a href="javascript:;" id="signin">Sign In</a></li>
-        <li><a href="javascript:;" id="signout">Sign Out</a></li>
-        <li><a href="javascript:;" id="about">About</a></li>
-        <li><a href="javascript:;" id="team">Team</a></li>
-        <li>
-          <p class="navbar-btn">
-            <a href="{{ url_for('home') }}" class="btn btn-default">Testing home</a>
-          </p>
-        </li>
-      </ul>
-    </div>
-  </nav>
   <img src="{{ url_for('static', filename='img/splash.png') }}"
     class="intro"
     id="intro"
