@@ -6,12 +6,9 @@ from bson.objectid import ObjectId
 
 client = pymongo.MongoClient()
 db = client.hedgehog
-
 users = db.users
-datas = db.datas
-
-tags = datas.tags
-info = datas.info
+tags = db.datas.tags
+info = db.datas.info
 
 # Tag related functions
 def create_tag(name, info_list=[], parent_tags=[], child_tags=[]):

@@ -3,7 +3,6 @@ import database, util
 from functools import wraps
 
 import flask, os.path
-from bson import json_util
 
 app = flask.Flask(__name__)
 user = util.UserAbstraction(flask.session)
@@ -11,10 +10,7 @@ render = flask.render_template
 s = flask.session
 r = flask.request
 
-def json_response(data):
-    return flask.Response(response=json_util.dumps(data),
-        status=200, mimetype='application/json')
-
+# Decorators
 def require_login(view):
     @wraps(view)
     def checked(*args, **kwds):
@@ -52,7 +48,7 @@ def api(action):
         flask.abort(418)
     if r.method == 'GET':
         if action == 'tags':
-            return json_response(database.get_all_tags())
+            return util.json_response(database.get_all_tags())
     if r.method == 'POST':
         if action == 'login':
             check = user.log_in(r.form.get('username'),
