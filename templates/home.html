@@ -5,7 +5,33 @@
 
 
 {% block content %}
-<h1>Well, this is awkward...</h1>
+<<<<<<< HEAD
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a id="logo" href="javascript:;" class="pull-left navbar-brand">
+          <img src="{{ url_for('static', filename='img/logo.png') }}"
+          height="30px">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+           <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+          </div>
+        <li><a href="javascript:;" id="signout">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Latest activity</a></li>
+    <li role="presentation"><a href="#">Your Study Guides</a></li>
+  </ul>
+
 {% endblock %}
 
 
