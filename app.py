@@ -57,9 +57,7 @@ def api(action):
                 return "No such username."
             if check == False:
                 return "Incorrect password."
-            response = flask.redirect('/')
-            response.set_cookie('hedgehog', json_util.dumps(check))
-            return response
+            return flask.redirect('/')
         if action == 'logout':
             user.log_out()
             response = flask.redirect('/')
