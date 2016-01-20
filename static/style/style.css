@@ -143,12 +143,9 @@ input[type=submit]{
       -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
 }
-<<<<<<< HEAD
 #form-control {
       width: 200px;
-=======
 
 .navbar {
       margin-bottom: 0;
->>>>>>> 91449a160b52856e2f07c9b16faf66f1d638f2f8
 }
