@@ -29,6 +29,11 @@ def index():
 def home():
     return render('home.html')
 
+@app.route('/create')
+@app.route('/create/')
+def create():
+    return render('create.html')
+
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
 @require_login
@@ -57,9 +62,7 @@ def api(action):
                 return "No such username."
             if check == False:
                 return "Incorrect password."
-            response = flask.redirect('/')
-            response.set_cookie('hedgehog', json_util.dumps(check))
-            return response
+            return flask.redirect('/')
         if action == 'logout':
             user.log_out()
             response = flask.redirect('/')
