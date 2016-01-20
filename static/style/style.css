@@ -15,7 +15,6 @@
       padding-top: 20vh;
       margin-left: auto;
       margin-right: auto;
-
 }
 
 .blue_bground {
@@ -148,3 +147,10 @@ input[type=submit]{
 .navbar {
       margin-bottom: 0;
 }
+
+.nav-stacked {
+      position: absolute;
+      width: 500px;
+
+#form-control {
+      width: 200px;
