@@ -150,7 +150,4 @@ input[type=submit]{
 
 .nav-stacked {
       position: absolute;
-      width: 500px;
-
-#form-control {
-      width: 200px;
+      width: 300px;
