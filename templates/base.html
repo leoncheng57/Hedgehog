@@ -21,12 +21,17 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
       {% block navbar %}
+        <li><a style="color:#ffffff;">Welcome, {{ user.name }}</a></li>
         <li><a href="javascript:;" id="signout">Sign Out</a></li>
+        <li><a href="{#{ url_for('about') }#}" id="about">About</a></li>
+        <li><a href="{#{ # url_for('team') }#}" id="team">Team</a></li>
       {% endblock %}
       </ul>
     </div>
   </nav>
+  
   {% block content %}{% endblock %}
+  
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"
     charset="utf-8"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"

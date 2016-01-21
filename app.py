@@ -6,18 +6,20 @@ import flask, os.path
 
 app = flask.Flask(__name__)
 user = util.UserAbstraction(flask.session)
-render = flask.render_template
 s = flask.session
 r = flask.request
 
-# Decorators
+# Decorators and Wrappers
 def require_login(view):
     @wraps(view)
-    def checked(*args, **kwds):
+    def checked(*args, **kargs):
         if user.logged_in:
-            return view(*args, **kwds)
+            return view(*args, **kargs)
         flask.abort(403)
     return checked
+
+def render(template, **kargs):
+    return flask.render_template(template, user=user, **kargs)
 
 # Views
 @app.route('/')
@@ -35,7 +37,7 @@ def create():
 @app.route('/database/', methods=["GET"])
 @require_login
 def database_admin():
-    return render('database_admin.html', user=user.name)
+    return render('database_admin.html')
 
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
