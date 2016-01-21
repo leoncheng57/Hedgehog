@@ -22,12 +22,9 @@ def require_login(view):
 # Views
 @app.route('/')
 def index():
-    return render('homepage.html')
-
-@app.route('/home')
-@app.route('/home/')
-def home():
-    return render('home.html')
+    if user.logged_in:
+        return render('home.html')
+    return render('index.html')
 
 @app.route('/create')
 @app.route('/create/')
@@ -50,7 +47,7 @@ def search_page():
 @app.route('/api/<action>/', methods=["GET", "POST"])
 @app.route('/api/<action>/<subaction>', methods=["GET","POST"])
 @app.route('/api/<action>/<subaction>/', methods=["GET","POST"])
-def api(action, subaction):
+def api(action, subaction=None):
     if action == 'java':
         flask.abort(418)
     if r.method == 'GET':
