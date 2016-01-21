@@ -142,7 +142,13 @@ input[type=submit]{
       -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
+
 }
+
+.about p {
+      font-size: 1.1em;
+}
+
 
 .navbar {
       margin-bottom: 0;
@@ -150,4 +156,10 @@ input[type=submit]{
 
 .nav-stacked {
       position: absolute;
-      width: 300px;
+
+      width: 500px;
+}
+
+#form-control {
+      width: 200px;
+}
