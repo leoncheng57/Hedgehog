@@ -115,13 +115,13 @@ input[type=submit]{
 .team {
       background-color: #34495E;
       color: #E4F1FE;
-      width: 500px;
-      height: 350px;
+      width: 700px;
+      height: 550px;
       padding: 20px;
       position: absolute;
       top: 50%;
       right: 50%;
-      margin: -185px -260px;
+      margin: -285px -360px;
       border-radius: 25px;
       -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
@@ -131,13 +131,13 @@ input[type=submit]{
 .about {
       background-color: #34495E;
       color: #E4F1FE;
-      width: 500px;
-      height: 350px;
+      width: 700px;
+      height: 550px;
       padding: 20px;
       position: absolute;
       top: 50%;
       right: 50%;
-      margin: -185px -260px;
+      margin: -285px -360px;
       border-radius: 25px;
       -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
