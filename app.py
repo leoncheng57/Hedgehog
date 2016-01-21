@@ -48,7 +48,9 @@ def search_page():
 # API
 @app.route('/api/<action>', methods=["GET", "POST"])
 @app.route('/api/<action>/', methods=["GET", "POST"])
-def api(action):
+@app.route('/api/<action>/<subaction>', methods=["GET","POST"])
+@app.route('/api/<action>/<subaction>/', methods=["GET","POST"])
+def api(action, subaction):
     if action == 'java':
         flask.abort(418)
     if r.method == 'GET':
@@ -75,6 +77,17 @@ def api(action):
                 return "User already exists."
             else:
                 return flask.redirect('/')
+        if action == 'info':
+            if subaction == 'create':
+                #database.create_info('this is the title',
+                #                     'this is the body',
+                #                     '1239810',
+                #                     ['bio', 'sci', 'eng'])
+                database.create_info(r.form.get('title'),
+                                     r.form.get('body'),
+                                     84249874,
+                                     list(r.form.get('tag')))
+                
     flask.abort(400)
 
 # Main Method
