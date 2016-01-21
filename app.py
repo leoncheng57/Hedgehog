@@ -29,6 +29,11 @@ def index():
 def home():
     return render('home.html')
 
+@app.route('/create')
+@app.route('/create/')
+def create():
+    return render('create.html')
+
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
 @require_login
