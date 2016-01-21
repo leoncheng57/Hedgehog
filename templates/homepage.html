@@ -2,30 +2,20 @@
 
 {% block title %} Hedgehog {% endblock %}
 
+{% block navbar %}
+<li><a href="javascript:;" id="signup">Sign Up</a></li>
+<li><a href="javascript:;" id="signin">Sign In</a></li>
+<li><a href="javascript:;" id="about">About</a></li>
+<li><a href="javascript:;" id="team">Team</a></li>
+<li>
+  <p class="navbar-btn">
+    <a href="{{ url_for('home') }}" class="btn btn-default">Testing home</a>
+  </p>
+</li>
+{% endblock %}
+
 {% block content %}
 <div class="home">
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a id="logo" href="javascript:;" class="pull-left navbar-brand">
-          <img src="{{ url_for('static', filename='img/logo.png') }}"
-          height="30px">
-        </a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:;" id="signup">Sign Up</a></li>
-        <li><a href="javascript:;" id="signin">Sign In</a></li>
-        <li><a href="javascript:;" id="signout">Sign Out</a></li>
-        <li><a href="javascript:;" id="about">About</a></li>
-        <li><a href="javascript:;" id="team">Team</a></li>
-        <li>
-          <p class="navbar-btn">
-            <a href="{{ url_for('home') }}" class="btn btn-default">Testing home</a>
-          </p>
-        </li>
-      </ul>
-    </div>
-  </nav>
   <img src="{{ url_for('static', filename='img/splash.png') }}"
     class="intro"
     id="intro"
@@ -71,7 +61,29 @@
     </p>
   </div>
   <div class="team" style="display:none;">
-    
+    <h1>Meet the Team</h1>
+    <table>
+      <!--
+      <tr>
+        <td>pic1</td>
+        <td>pic2</td>
+        <td>pic3</td>
+        <td>pic4</td>
+      </tr>
+      -->
+      <tr>
+        <td>Leader</td>
+        <td>Backend Developer</td>
+        <td>UX Designer</td>
+        <td>Middleware Developer</td>
+      </tr>
+      <tr>
+        <td>Angela Chan</td>
+        <td>Leon Cheng</td>
+        <td>Amanda Chiu</td>
+        <td>Eric Stringham</td>
+      </tr>
+    </table>
   </div>
 </div>
 {% endblock %}

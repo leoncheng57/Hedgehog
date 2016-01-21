@@ -12,9 +12,9 @@
 
 .intro {
       display: block;
+      padding-top: 20vh;
       margin-left: auto;
       margin-right: auto;
-      padding-top: 10vh;
 }
 
 .blue_bground {
@@ -51,6 +51,22 @@ h1 {
 }
 
 .signup {
+      background-color: #34495E;
+      color: #E4F1FE;
+      width: 500px;
+      height: 350px;
+      padding: 20px;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      margin: -185px -260px;
+      border-radius: 25px;
+      -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
+}
+
+.team {
       background-color: #34495E;
       color: #E4F1FE;
       width: 500px;
@@ -131,4 +147,18 @@ input[type=submit]{
 
 .about p {
       font-size: 1.1em;
+}
+
+
+.navbar {
+      margin-bottom: 0;
+}
+
+.nav-stacked {
+      position: absolute;
+      width: 500px;
+}
+
+#form-control {
+      width: 200px;
 }

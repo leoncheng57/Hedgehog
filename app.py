@@ -3,7 +3,6 @@ import database, util
 from functools import wraps
 
 import flask, os.path
-from bson import json_util
 
 app = flask.Flask(__name__)
 user = util.UserAbstraction(flask.session)
@@ -11,10 +10,7 @@ render = flask.render_template
 s = flask.session
 r = flask.request
 
-def json_response(data):
-    return flask.Response(response=json_util.dumps(data),
-        status=200, mimetype='application/json')
-
+# Decorators
 def require_login(view):
     @wraps(view)
     def checked(*args, **kwds):
@@ -28,6 +24,28 @@ def require_login(view):
 def index():
     return render('homepage.html')
 
+@app.route('/home')
+@app.route('/home/')
+def home():
+    return render('home.html')
+
+@app.route('/create')
+@app.route('/create/')
+def create():
+    return render('create.html')
+
+@app.route('/database', methods=["GET"])
+@app.route('/database/', methods=["GET"])
+@require_login
+def database_admin():
+    return render('database_admin.html', user=user.name)
+
+@app.route("/search", methods=["GET","POST"])
+@app.route("/search/", methods=["GET","POST"])
+def search_page():
+    return search.default(r.method, r.form.get('searchTerm'))
+
+# API
 @app.route('/api/<action>', methods=["GET", "POST"])
 @app.route('/api/<action>/', methods=["GET", "POST"])
 def api(action):
@@ -35,7 +53,7 @@ def api(action):
         flask.abort(418)
     if r.method == 'GET':
         if action == 'tags':
-            return json_response(database.get_all_tags())
+            return util.json_response(database.get_all_tags())
     if r.method == 'POST':
         if action == 'login':
             check = user.log_in(r.form.get('username'),
@@ -44,9 +62,7 @@ def api(action):
                 return "No such username."
             if check == False:
                 return "Incorrect password."
-            response = flask.redirect('/')
-            response.set_cookie('hedgehog', json_util.dumps(check))
-            return response
+            return flask.redirect('/')
         if action == 'logout':
             user.log_out()
             response = flask.redirect('/')
@@ -61,27 +77,7 @@ def api(action):
                 return flask.redirect('/')
     flask.abort(400)
 
-@app.route('/database', methods=["GET"])
-@app.route('/database/', methods=["GET"])
-@require_login
-def database_admin():
-    return render('database_admin.html', user=user.name)
-
-
-###
-
-@app.route('/home')
-@app.route('/home/')
-def home():
-    return render('home.html')
-
-@app.route("/search", methods=["GET","POST"])
-@app.route("/search/", methods=["GET","POST"])
-def search_page():
-    return search.default(r.method, r.form.get('searchTerm'))
-
 # Main Method
-
 if __name__ == '__main__':
     app.debug = True
     app.secret_key = '895uvq_09ta834_xna_2847vt3v9o3u8tw948t5e'

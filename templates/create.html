@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Hedgehog{% endblock %}
+
+
+{% block content %}
+<h1>Create an Info Card!</h1>
+
+Title: <input id="info-title" type="text" name="title" placeholder="Exploding Kittens...">
+<br>
+
+Body:
+<br>
+<input id="info-body" type="textarea" name="body" placeholder="How many cats does it take to build a rocket?...">
+<br>
+
+Tag: <input id="tag-name" type="text" name="tag" placeholder="physics...">
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/user.js') }}"></script>
+{% endblock %}
