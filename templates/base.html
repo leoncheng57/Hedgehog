@@ -20,16 +20,9 @@
         </a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:;" id="signup">Sign Up</a></li>
-        <li><a href="javascript:;" id="signin">Sign In</a></li>
+      {% block navbar %}
         <li><a href="javascript:;" id="signout">Sign Out</a></li>
-        <li><a href="javascript:;" id="about">About</a></li>
-        <li><a href="javascript:;" id="team">Team</a></li>
-        <li>
-          <p class="navbar-btn">
-            <a href="{{ url_for('home') }}" class="btn btn-default">Testing home</a>
-          </p>
-        </li>
+      {% endblock %}
       </ul>
     </div>
   </nav>
