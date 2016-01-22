@@ -6,7 +6,7 @@
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/in.css') }}" />
   <title>{% block title %}{% endblock %}</title>
 </head>
 
@@ -19,7 +19,7 @@
           height="30px">
         </a>
       </div>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right navbar-static-right">
         <li>
            <div class="input-group">
               <input type="text" class="form-control" style="width: 500px; padding: 15px;" placeholder="Search for...">
