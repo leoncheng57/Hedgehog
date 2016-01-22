@@ -82,7 +82,7 @@ def api(action, subaction=None):
                 #                     'this is the body',
                 #                     '1239810',
                 #                     ['bio', 'sci', 'eng'])
-                database.create_info(r.form.get('title'),
+                print database.create_info(r.form.get('title'),
                                      r.form.get('body'),
                                      84249874,
                                      list(r.form.get('tag')))

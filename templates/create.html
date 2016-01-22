@@ -19,10 +19,12 @@ Body:
 Tag: <input id="tag-name" type="text" name="tag" placeholder="physics...">
 <br>
 
-<input type="submit" name="submit-button" value="Create!">
+<input type="submit" id="submit-button" name="submit" value="Create!">
 {% endblock %}
 
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/user.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/info.js') }}"></script>
 {% endblock %}
