@@ -167,3 +167,7 @@ input[type=submit]{
 top {
       z-index: 2000;
 }
+
+.navbar-fixed-top {
+      padding-top: 100px;
+}

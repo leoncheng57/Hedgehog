@@ -98,4 +98,4 @@ if __name__ == '__main__':
     app.debug = True
     app.secret_key = '895uvq_09ta834_xna_2847vt3v9o3u8tw948t5e'
     app.run('0.0.0.0',
-        8080 if os.path.isfile('./cloudy') else 8000)
+        8000 if os.path.isfile('./cloudy') else 8080)
