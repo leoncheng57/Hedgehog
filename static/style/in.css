@@ -41,6 +41,8 @@ html { height: 100%;}
 
 #sidebar-wrapper::-webkit-scrollbar {
   display: none;
+      position: absolute;
+    margin-top:50px;
 }
 
 #wrapper.toggled #sidebar-wrapper {
