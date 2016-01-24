@@ -170,7 +170,7 @@ html { height: 100%;}
 
 .hamburger {
   position: fixed;
-  top: 20px;  
+  top: 70px;  
   z-index: 999;
   display: block;
   width: 32px;

@@ -7,11 +7,12 @@
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/in.css') }}" />
   <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-static-top">
+  <nav class="navbar navbar-inverse navbar-static-top top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a id="logo" href="javascript:;" class="pull-left navbar-brand">
@@ -37,6 +38,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
     integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
     crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/in.js') }}" /></script>
   {% block scripts %}{% endblock %}
 </body>
 
