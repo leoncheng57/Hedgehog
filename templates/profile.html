@@ -57,10 +57,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <img src="{{ url_for('static', filename='img/icon/self.jpg') }}"
-                        alt="It's you!">
+                        <center>
+                        <img src="{{ url_for('static', filename='img/self.jpg') }}"
+                        alt="It's you!"
+                        style="height:12vh;">
                         <h1>{{ user.name }}'s Profile</h1>
-                       
+                        <h2>{{ user.name }}'s Study Guides</h2>
+                        
+                        </center>
                     </div>
                 </div>
             </div>
