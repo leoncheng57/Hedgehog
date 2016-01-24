@@ -81,6 +81,7 @@ def api(action, subaction=None):
                 return flask.redirect('/')
         if action == 'info':
             if subaction == 'create':
+                return util.json_response(r.get_json())
                 #database.create_info('this is the title',
                 #                     'this is the body',
                 #                     '1239810',

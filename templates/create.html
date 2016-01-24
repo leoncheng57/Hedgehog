@@ -5,21 +5,22 @@
 
 
 {% block content %}
-<h1>Create an Info Card!</h1>
-
-
-Title: <input id="info-title" type="text" name="title" placeholder="Exploding Kittens...">
-<br>
-
-Body:
-<br>
-<input id="info-body" type="textarea" name="body" placeholder="How many cats does it take to build a rocket?...">
-<br>
-
-Tag: <input id="tag-name" type="text" name="tag" placeholder="physics...">
-<br>
-
-<input type="submit" id="submit-button" name="submit" value="Create!">
+<div class="container">
+  <h1>Create an Info Card!</h1>
+  <form id="create-info">
+    <h4>Title</h4>
+    <input name="title"
+      type="text" placeholder="Exploding Kittens..." />
+    <h4>Body</h4>
+    <textarea name="body" rows="4" cols="50"
+      placeholder="How many cats does it take to build a rocket?...">
+    </textarea>
+    <h4>Tag</h4>
+    <input name="tag"
+      type="text" placeholder="physics..." />
+    <input type="submit" name="submit" />
+  </form>
+</div>
 {% endblock %}
 
 

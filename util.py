@@ -1,5 +1,6 @@
 import database
 
+from flask import Response
 from bson import json_util
 
 class BaseAbstraction(object):
@@ -58,5 +59,5 @@ class UserAbstraction(BaseAbstraction):
         self.s['user'] = None
 
 def json_response(data):
-    return flask.Response(response=json_util.dumps(data),
+    return Response(response=json_util.dumps(data),
         status=200, mimetype='application/json')

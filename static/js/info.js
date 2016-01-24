@@ -1,34 +1,26 @@
-var sbutton = document.getElementById('submit-button');
-sbutton.addEventListener('click', function(e) {
-    storeInfo(e, 
-	      document.getElementById('info-title').value, 
-	      document.getElementById('info-body').value, 
-	      document.getElementById('tag-name').value
-	     )
-});
+var createInfo = $('#create-info');
 
-
-
-function storeInfo(e, title, body, tag) {
-    if (e.keyCode == 13) {
-	$.ajax({
-	    type: 'POST',
-	    url: '/api/info/create/',
-	    data: {title:title, body:body, tag:tag},
-	    accepts: 'application/json',
-	    success: function(data) {
-
-		console.log("data: "+data);
-		///////////////////////////////////////////////////////////////////////////////
-		// $('#' + type + '-search-results').empty();				       //
-		// $.each(data, function(i, item) {					       //
-		//     $('#' + type + '-search-results').append(			       //
-		// 	  $('<li>').append(item.name + ' (' + item._id.$oid + ')'));	       //
-		// });								       //
-		///////////////////////////////////////////////////////////////////////////////
-
-	    }
+if (createInfo) createInfo.submit( function(e) {
+	e.preventDefault();
+	var form = {};
+	$.each( $(this).serializeArray(), function(i, e) {
+		form[e.name] = e.value;
 	});
-    }
-    console.log("storeInfo has been run!");
-}
+	$.ajax({
+		type: 'POST',
+		url: '/api/info/create/',
+		data: JSON.stringify(form),
+		contentType: 'application/json',
+		accepts: 'application/json',
+		success: function(data) {
+			console.log(data);
+			///////////////////////////////////////////////////////////////////////////////
+			// $('#' + type + '-search-results').empty();				       //
+			// $.each(data, function(i, item) {					       //
+			//     $('#' + type + '-search-results').append(			       //
+			// 	  $('<li>').append(item.name + ' (' + item._id.$oid + ')'));	       //
+			// });								       //
+			///////////////////////////////////////////////////////////////////////////////
+		}
+	});
+});
