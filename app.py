@@ -27,6 +27,11 @@ def index():
     if user.logged_in:
         return render('home.html')
     return render('index.html')
+    
+@app.route('/profile')
+@app.route('/profile/')
+def profile():
+    return render('profile.html')
 
 @app.route('/create')
 @app.route('/create/')
