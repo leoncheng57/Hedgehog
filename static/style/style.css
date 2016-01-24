@@ -164,7 +164,7 @@ input[type=submit]{
       width: 200px;
 }
 
-top {
+.top {
       z-index: 2000;
 }
 
