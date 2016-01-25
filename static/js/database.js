@@ -28,7 +28,7 @@ function getTags() {
 function getInfo() {
   $.ajax({
     type: 'GET',
-    url: '/api/tags/', // Because as I began writing this I realized I'd need more functions that I have and I wanna go to bed so no chance of those getting done at the moment.
+    url: '/api/info/',
     accepts: 'application/json',
     success: function (data) {
       $.each(data, function(i, info) {
@@ -36,9 +36,11 @@ function getInfo() {
           $('<tr>').append(
             $('<td>').append(i)
           ).append(
-            $('<td>').append('info.title')
+            $('<td>').append(info.title)
           ).append(
-            $('<td>').append('info.author')
+            $('<td>').append(info.author.$oid)
+          ).append(
+            $('<td>').append(info.body)
           ).append(
             $('<td>').append(info._id.$oid)
           )

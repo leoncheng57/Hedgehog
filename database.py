@@ -58,6 +58,9 @@ def create_info(title, body, author_id, tag_list):
     link_info_to_user(result.inserted_id, author_id)
     return True
 
+def get_all_info():
+    return list(info.find(projection=['title', 'author', 'body']))
+
 # User related functions
 def create_user(username, password):
     if users.find_one({'username': username}):
