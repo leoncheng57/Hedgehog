@@ -3,7 +3,6 @@ INSERT MOTTO HERE (something witty about quills meaning hedgehog quills and writ
 
 <center>![alt tag](static/img/splash.png)</center>
 
-
 ## What is Hedgehog?
 Hedgehog is an easy to use and comprehensive study guide tool. It draws on information from a variety of sources and its wide pool of users. With Hedgehog, users can now effortlessly create their ideal study guide by choosing snippets of information from public user-created general study guides. They are also able to contribute their own knowledge where they see fit. Hedgehog will even sift through specific academic websites to facilitate searching for relevant information.
 <br>
@@ -24,21 +23,23 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 
 # TO-DO
 - [X] Login System
+  - [X] User accounts
   - [ ] Private Groups/Classes/Organizations
+- [ ] Study Tools
+  - [X] Info Cards
+  - [ ] Study Sheets
+  - [ ] Folders for sheets
 - [ ] Topic Organization System
  - [ ] Difficulty/Depth of information
  - [ ] Topics/Subtopics
-- [ ] Storage System
- - [ ] Plain Text / Markdown Word Processor
- - [ ] Organized by Topics and Private Groups
- - [ ] All user created
-- [ ] Assisted Search
-  - [ ] Compile a Specific Set of Outside Research Sources
-  - [ ] Put as a sidebar on the side of the plaintext editor
-  - [ ] Maybe search through google for links, then parse links to only accept those that are on our good list of Outside Research Sources
+- [X] Assisted Search
+  - [X] Compile a Specific Set of Outside Research Sources
+  - [X] Put as a sidebar on the side of the plaintext editor
+  - [X] Maybe search through google for links, then parse links to only accept those that are on our good list of Outside Research Sources
   - [ ] Maybe use APIs of study sites (ex. Wikipedia) or use page scraping to get info from any study site website
 - [ ] Mnemonic Generator
   - [ ] Generate Random Words
   - [ ] Make it sound like a sentence
   - [ ] Find relevant pictures
   - [ ] Maybe Design it like a meme
+- [ ] YouTube Video of project: (insert link here when complete)
