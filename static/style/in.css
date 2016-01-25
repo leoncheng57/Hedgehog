@@ -310,7 +310,9 @@ html { height: 100%;}
     color:white;
 }
 
-table, td {
+.borderless table, td {
+    width:300px;
     vertical-align: middle;
     text-align: center;
+    
 }
