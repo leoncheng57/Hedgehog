@@ -8,6 +8,9 @@
     crossorigin="anonymous" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style/in.css') }}" />
+  <link rel="icon"
+      type="img/x-icon/"
+      src="{{ url_for('static', filename='img/icon/quill.ico') }}">
   <title>{% block title %}{% endblock %}</title>
   {% block style %}{% endblock %}
 </head>
