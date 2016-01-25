@@ -312,3 +312,8 @@ html { height: 100%;}
 .sidebar-nav > .footer > a {
     color:white;
 }
+
+td {
+    vertical-align: middle;
+    padding: 10px 20px;
+}
