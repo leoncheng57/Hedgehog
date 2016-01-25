@@ -64,6 +64,8 @@ def api(action, subaction=None):
     if action == 'java':
         flask.abort(418)
     if r.method == 'GET':
+        if action == 'info':
+            return util.json_response(database.get_all_info())
         if action == 'tags':
             return util.json_response(database.get_all_tags())
     if r.method == 'POST':
@@ -99,7 +101,7 @@ def api(action, subaction=None):
                     user.id,
                     [],
                 )
-            return "Potential success?"
+            return
     flask.abort(400)
 
 # Main Method
