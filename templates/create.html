@@ -6,22 +6,28 @@
 
 {% block content %}
 
-<div class="container">
-  <h1>Create an Info Card!</h1>
-  <form id="create-info">
-    <h4>Title</h4>
-    <input name="title"
-      type="text" placeholder="Exploding Kittens..." />
-    <h4>Body</h4>
-    <textarea name="body" rows="4" cols="50"
-      placeholder="How many cats does it take to build a rocket?...">
-    </textarea>
-    <h4>Tag</h4>
-    <input name="tag"
-      type="text" placeholder="physics..." />
-    <input type="submit" name="submit" />
-  </form>
-</div>
+<center>
+  <div class="container">
+    <h1>Create an Info Card!</h1>
+    <form id="create-info">
+      Title
+      <input name="title"
+	     type="text" placeholder="Exploding Kittens..." />
+      <br>
+      Body: 
+      <br>
+      <textarea name="body" rows="4" cols="50"
+		placeholder="How many cats does it take to build a rocket?...">
+      </textarea>
+      <br>
+      Tag
+      <input name="tag"
+	     type="text" placeholder="physics..." />
+      <br>
+      <input type="submit" name="submit" />
+    </form>
+  </div>
+</center>
 
 {% endblock %}
 
