@@ -21,6 +21,7 @@ html { height: 100%;}
 }
 
 #wrapper.toggled {
+    padding-left: 300px;
 }
 
 #sidebar-wrapper {
@@ -39,20 +40,16 @@ html { height: 100%;}
 }
 
 #sidebar-wrapper::-webkit-scrollbar {
-    display: none;
-    position: absolute;
-    margin-top:50px;
+  display: none;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    position: absolute;
-    margin-top:50px;
     width: 300px;
 }
 
 #page-content-wrapper {
     width: 100%;
-    padding-top: 100px;
+    padding-top: 70px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -71,7 +68,6 @@ html { height: 100%;}
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 40px;
 }
 
 .sidebar-nav li {
@@ -94,8 +90,8 @@ html { height: 100%;}
       -moz-transition:  width .2s ease-in;
        -ms-transition:  width .2s ease-in;
             transition: width .2s ease-in;
-}
 
+}
 .sidebar-nav li:first-child a {
     color: #fff;
     background-color: #1a1a1a;
@@ -297,10 +293,6 @@ html { height: 100%;}
     bottom: 0;
     background-color: rgba(250,250,250,.8);
     z-index: 1;
-}
-
-.navbar-fixed-top {
-    padding-top: 100px;
 }
 
 /* OTHER STUFF */
