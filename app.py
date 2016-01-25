@@ -67,7 +67,7 @@ import google
 
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
-def search():
+def asearch():
     if r.method == "GET":
         return render("search.html", page_type="search")
     else:
@@ -83,8 +83,7 @@ def search():
             message = ""
             if (len(l)<2):
                 message = "Timed Out: More results would take too long"
-            return render("search.html", links=l, message=message, pagetype="results")
-    #return search.default(r.method, r.form.get('searchTerm'))
+            return render("search.html", links=l, message=message, page_type="results")
 
 # API
 @app.route('/api/<action>', methods=["GET", "POST"])
