@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style/in.css') }}" />
   <title>{% block title %}{% endblock %}</title>
+  {% block style %}{% endblock %}
 </head>
 
 <body>
