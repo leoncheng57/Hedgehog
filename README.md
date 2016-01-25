@@ -4,6 +4,7 @@ INSERT MOTTO HERE (something witty about quills meaning hedgehog quills and writ
 <center>
 <p align="center">
 ![alt tag](static/img/splash.png)
+<img src="http://s.4cdn.org/image/title/105.gif">
 </p>
 </center>
 
