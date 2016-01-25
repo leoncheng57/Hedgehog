@@ -1,12 +1,11 @@
 # Hedgehog
 INSERT MOTTO HERE (something witty about quills meaning hedgehog quills and writing quills)
 
-<center>
+
 <p align="center">
-![alt tag](static/img/splash.png)
-<img src="http://s.4cdn.org/image/title/105.gif">
+<img src="static/img/splash.png">
 </p>
-</center>
+
 
 ## What is Hedgehog?
 Hedgehog is an easy to use and comprehensive study guide tool. It draws on information from a variety of sources and its wide pool of users. With Hedgehog, users can now effortlessly create their ideal study guide by choosing snippets of information (info cards) from the public database on Hedgehog. They are also able to contribute their own knowledge by creating their own info cards. Hedgehog even has an assisted search feature to sift through specific academic websites to facilitate searching for relevant information.
