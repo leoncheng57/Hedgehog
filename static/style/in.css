@@ -296,9 +296,6 @@ html { height: 100%;}
 }
 
 /* OTHER STUFF */
-.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
-    border: none;
-}
 
 .sidebar-nav > .footer {
     position: fixed;
@@ -313,7 +310,7 @@ html { height: 100%;}
     color:white;
 }
 
-td {
+table, td {
     vertical-align: middle;
-    padding: 10px 20px;
+    text-align: center;
 }
