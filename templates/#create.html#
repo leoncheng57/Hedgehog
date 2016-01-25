@@ -28,11 +28,7 @@
       <input type="submit" name="submit" />
     </form>
   </div>
-  
-  <!-- Box for assisted search -->
-  <div align="left">
-    <object type="text/html" data="assisted_search" width="250px" height="500px" style="overflow:auto;border:5px ridge blue"></object>
-  </div>
+
 
 </center>
 

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Hedgehog{% endblock %}
+
+
+{% block content %}
+
+<center>
+  <div class="container">
+    <h1>Here are your cards</h1>
+    </form>
+  </div>
+<br>
+(<u>Developer's Note</u>: This page is currently under construction. Should be displaying the infos the user created.)
+</center>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/user.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/info.js') }}"></script>
+{% endblock %}

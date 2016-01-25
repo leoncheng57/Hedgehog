@@ -1,4 +1,4 @@
-import database, util
+import database, util, search
 
 from functools import wraps
 
@@ -8,6 +8,7 @@ app = flask.Flask(__name__)
 user = util.UserAbstraction(flask.session)
 s = flask.session
 r = flask.request
+srcs = search.getSources()
 
 # Decorators and Wrappers
 def require_login(view):
@@ -50,16 +51,40 @@ def create():
 def memeonic():
     return render('memeonic.html')
 
+@app.route('/display_infos')
+@app.route('/display_infos/')
+@require_login
+def display_infos():
+    return render('display_infos.html')
+
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
 @require_login
 def database_admin():
     return render('database_admin.html')
 
+import google
+
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
-def search_page():
-    return search.default(r.method, r.form.get('searchTerm'))
+def search():
+    if r.method == "GET":
+        return render("search.html", page_type="search")
+    else:
+        q = r.form["searchTerm"]
+        if q:
+            print q
+            l = []
+            results = google.search(q,num=10,start=0,stop=25)
+            for url in results:
+                for src in srcs:
+                    if url.find(src)!=-1:
+                        l.append(url)
+            message = ""
+            if (len(l)<2):
+                message = "Timed Out: More results would take too long"
+            return render("search.html", links=l, message=message, pagetype="results")
+    #return search.default(r.method, r.form.get('searchTerm'))
 
 # API
 @app.route('/api/<action>', methods=["GET", "POST"])
