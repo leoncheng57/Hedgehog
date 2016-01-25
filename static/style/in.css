@@ -302,3 +302,8 @@ html { height: 100%;}
 .navbar-fixed-top {
     padding-top: 100px;
 }
+
+/* OTHER STUFF */
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
