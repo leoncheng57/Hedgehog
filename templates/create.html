@@ -8,7 +8,6 @@
 
 <center>
   <div class="container">
-    <div class="infocard">
     <h1>Create an Info Card!</h1>
     <form id="create-info">
       Title
@@ -29,33 +28,6 @@
       <input type="submit" name="submit" />
     </form>
     </div>
-    <div class="search">
-      
-{% if page_type == "search" %}
-<h1>Search</h1>
-<form method = "POST">
-  <input type="text" name="searchTerm" placeholder="The 9001th theorem of the Universe">
-  <p/>
-  <input type="submit" name="button" value="search">
-</form>
-
-{% else %}
-<h1>Links</h1>
-
-{% for link in links %}
-<a href="{{link}}">{{link}}</a>
-<br>
-<br>
-{% endfor %}
-
-{% if message!="" %}
-<i>{{message}}</i>
-{% endif %}
-
-</center>
-
-{% endif %}</div>
-  </div>
   
   <!-- Box for assisted search -->
   <div align="left">
