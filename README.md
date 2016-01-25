@@ -10,6 +10,7 @@ In addition, Hedgehog strives to provide users with a mnemonic generator tool. T
 <br>
 
 ## Behing the Name
+A hodgepodge of Study Material.
 Hodgepodge.
 Hedgepodge.
 Hedgehog.
