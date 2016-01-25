@@ -68,11 +68,21 @@ body
 {% endblock %}
 
 {% block content %}
-<div class="box">
-    <h1>TITLE</h1>
+<div class="container">
+	<button onclick="myFunction()">EDIT DOC</button>
+	<div class="box">
+    	<p id="myP">TITLE</p>
+	</div>
 </div>
+
 {% endblock %}
 
 {% block scripts %}
+<script>
+function myFunction() {
+    document.getElementById("myP").contentEditable = true;
+    document.getElementById("demo").innerHTML = "STUDY GUIDE IN PROGRESS...";
+}
+</script>
 <script src="{{ url_for('static', filename='js/user.js') }}"></script>
 {% endblock %}
