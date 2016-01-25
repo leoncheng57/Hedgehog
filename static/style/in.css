@@ -316,3 +316,7 @@ html { height: 100%;}
     text-align: center;
     
 }
+
+.navbar-fixed-top {
+    height: 1vh;
+}

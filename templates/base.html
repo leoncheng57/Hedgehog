@@ -13,12 +13,14 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-static-top top">
+  <nav class="navbar navbar-inverse navbar-fixed-top top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a id="logo" href="javascript:;" class="pull-left navbar-brand">
-          <img src="{{ url_for('static', filename='img/logo.png') }}"
-          height="30px">
+        <a id="logo" href="/" class="pull-left navbar-brand">
+          <img src="{{ url_for('static', filename='img/quill.png') }}"
+          alt="Hedgehog"
+          style="top:-4vh;
+          height:5vh;">
         </a>
       </div>
       <ul class="nav navbar-nav navbar-right">
@@ -45,8 +47,8 @@
                        
                     </a>
                 </li>
-                <li class="active">
-                    <a href="#">Home</a>
+                <li>
+                    <a href="/">Home</a>
                 </li>
                 <li>
                     <a href="/new">Create a new study guide</a>
