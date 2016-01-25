@@ -35,6 +35,7 @@ def profile():
 
 @app.route('/create')
 @app.route('/create/')
+@require_login
 def create():
     return render('create.html')
 
@@ -86,16 +87,14 @@ def api(action, subaction=None):
                 return flask.redirect('/')
         if action == 'info':
             if subaction == 'create':
-                return util.json_response(r.get_json())
-                #database.create_info('this is the title',
-                #                     'this is the body',
-                #                     '1239810',
-                #                     ['bio', 'sci', 'eng'])
-                print database.create_info(r.form.get('title'),
-                                     r.form.get('body'),
-                                     84249874,
-                                     list(r.form.get('tag')))
-                
+                data = r.get_json()
+                database.create_info(
+                    data.get('title'),
+                    data.get('body'),
+                    user.id,
+                    [],
+                )
+            return "Potential success?"
     flask.abort(400)
 
 # Main Method
