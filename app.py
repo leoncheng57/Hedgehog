@@ -44,6 +44,12 @@ def new():
 def create():
     return render('create.html')
 
+@app.route('/memeonic')
+@app.route('/memeonic/')
+@require_login
+def memeonic():
+    return render('memeonic.html')
+
 @app.route('/database', methods=["GET"])
 @app.route('/database/', methods=["GET"])
 @require_login

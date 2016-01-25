@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Hedgehog{% endblock %}
+
+
+{% block content %}
+
+<center>
+  <div class="container">
+    <h1>Generate a Mnemonic Meme!</h1>
+    <form id="create-info">
+      <h4>Expression</h4>
+      <input name="expression"
+	     type="text" placeholder="F = ma" />
+      <br>
+      <input type="submit" name="submit" />
+    </form>
+  </div>
+<br>
+(<u>Developer's Note</u>: This page is currently under construction. Submitting does not work.)
+</center>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/user.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/info.js') }}"></script>
+{% endblock %}
