@@ -32,6 +32,11 @@ def index():
 @app.route('/profile/')
 def profile():
     return render('profile.html')
+    
+@app.route('/new')
+@app.route('/new/')
+def new():
+    return render('new.html')
 
 @app.route('/create')
 @app.route('/create/')
