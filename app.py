@@ -40,11 +40,14 @@ def profile():
 def new():
     return render('new.html')
 
-@app.route('/create')
-@app.route('/create/')
+@app.route("/create", methods=["GET","POST"])
+@app.route("/create/", methods=["GET","POST"])
 @require_login
 def create():
-    return render('create.html')
+    if r.method == "GET":
+        return render('create.html')
+    else:
+        return render('create.html')
 
 @app.route('/memeonic')
 @app.route('/memeonic/')
@@ -74,7 +77,7 @@ def search():
         if q:
             print q
             l = []
-            results = google.search(q,num=10,start=0,stop=25)
+            results = google.search(q,num=10,start=0,stop=1)
             for url in results:
                 for src in srcs:
                     if url.find(src)!=-1:
@@ -131,9 +134,9 @@ def api(action, subaction=None):
                     [],
                 )
                 return
-            if subaction == 'display_infos':
-                l = get_all_info()
-                return l
+                if subaction == 'display_infos':
+                    l = get_all_info()
+                    return l
     flask.abort(400)
 
 # Main Method

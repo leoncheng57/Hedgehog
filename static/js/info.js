@@ -24,3 +24,10 @@ if (createInfo) createInfo.submit( function(e) {
 		}
 	});
 });
+
+var showButton = $('#showButton');
+
+if (showButton) showButton.click( function(e) {
+  console.log("displaying the infos");
+  $('<form action="/api/info/display_infos/" method="POST">').submit();
+});
