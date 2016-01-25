@@ -1,4 +1,5 @@
 import database, util, search
+import google
 
 from functools import wraps
 
@@ -63,11 +64,9 @@ def display_infos():
 def database_admin():
     return render('database_admin.html')
 
-import google
-
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
-def asearch():
+def search():
     if r.method == "GET":
         return render("search.html", page_type="search")
     else:
@@ -131,7 +130,10 @@ def api(action, subaction=None):
                     user.id,
                     [],
                 )
-            return
+                return
+            if subaction == 'display_infos':
+                l = get_all_info()
+                return l
     flask.abort(400)
 
 # Main Method
