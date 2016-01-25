@@ -44,23 +44,8 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
   - maybe pictures
   - allow user to input a list of words that they find associated with the formula (so that the mnemonic will be more closely related to what the user knows and wants instead of random words)
 
-
-## Friendly Comments
-- This looks really useful -- study guides are always scattered around. The way Hedgehog searches academic papers to generate relevant info as well would be helpful to check and find out more reliable info. I think the mnemonic generator is a really cool idea too, hopefully that'll make it in. -Kathy Wang
-
-- This would be awesome to prepare for any test! The sifting through entire academic websites seems very tough. As an alternative you could ask the user for a url of info and keywords to look for. Then using regex you could just pull out only the important info. -Javis Wu
-
-- This looks like a great way to make studying a lot easier. It would also provide a very customized studying experience, and I think it would be good to alllow users to enter their own sites to parse for information. - Ishraq Bhuiyan
-
-# CITATIONS
-- https://code.google.com/p/simplenlg/wiki/Section5
-- http://web.mit.edu/course/6/6.863/tools/tregex/javadoc/edu/stanford/nlp/ling/Sentence.html
-- https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&es_th=1&ie=UTF-8&client=ubuntu&q=create%20a%20sentence%20api&oq=create%20a%20sentence%20api&aqs=chrome.0.69i59j0l5.1873j0j1
-- https://pythonhosted.org/google/
-
-
 # TO-DO
-- [ ] Login System
+- [X] Login System
   - [ ] Private Groups/Classes/Organizations
 - [ ] Topic Organization System
  - [ ] Difficulty/Depth of information
