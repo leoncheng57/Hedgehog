@@ -153,7 +153,9 @@ input[type=submit]{
       font-size: 1.1em;
 }
 
-
+table, td {
+      padding-top: 20px;
+}
 .navbar {
       margin-bottom: 0;
 }
