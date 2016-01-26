@@ -67,15 +67,21 @@ body
 {% endblock %}
 
 {% block content %}
-<div class="container">
-	<button onclick="myFunction()">EDIT DOC</button>
-	<button onclick="stop()">SUBMIT</button>
-	<div class="box">
-    	<p id="myP">TITLE</p>
-	</div>
-
-</div>
-
+<center>
+  <div class="container">
+    <button onclick="myFunction()">EDIT DOC</button>
+    <button onclick="stop()">SUBMIT</button>
+    <br><br>
+    <div class="box" align="left" style="width:700px; height: 800px;">
+      <p id="myP">
+	TITLE
+	<br>
+	<br>
+	(<u>Developer's Note</u>: This page is currently under construction. Study Guides are meant to be user-created collections of info cards.)
+      </p>
+    </div>
+  </div>
+</center>
 {% endblock %}
 
 {% block scripts %}
