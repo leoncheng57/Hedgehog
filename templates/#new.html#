@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}New Study Guide{% endblock %}
+
+{% block style %}
+<style type="text/css">
+body
+{
+	font-family: arial, helvetica, freesans, sans-serif;
+	font-size: 100%;
+	color: #333;
+	background-color: #ddd;
+}
+
+.box
+{
+	position: relative;
+	bottom: 2vh;
+	width: 100vh;
+	height: 150vh;
+	padding: 50px;
+	margin: 0 auto;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.box:before, .box:after
+{
+	position: absolute;
+	width: 40%;
+	height: 10px;
+	content: ' ';
+	left: 12px;
+	bottom: 12px;
+	background: transparent;
+	-webkit-transform: skew(-5deg) rotate(-5deg);
+	-moz-transform: skew(-5deg) rotate(-5deg);
+	-ms-transform: skew(-5deg) rotate(-5deg);
+	-o-transform: skew(-5deg) rotate(-5deg);
+	transform: skew(-5deg) rotate(-5deg);
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	z-index: -1;
+} 
+
+.box:after
+{
+	left: auto;
+	right: 12px;
+	-webkit-transform: skew(5deg) rotate(5deg);
+	-moz-transform: skew(5deg) rotate(5deg);
+	-ms-transform: skew(5deg) rotate(5deg);
+	-o-transform: skew(5deg) rotate(5deg);
+	transform: skew(5deg) rotate(5deg);
+}
+</style>
+{% endblock %}
+
+{% block navbar %}
+        <li><a style="color:#ffffff;">Welcome, {{ user.name }}</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="javascript:;" id="signout">Sign Out</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<button onclick="myFunction()">EDIT DOC</button>
+	<button onclick="stop()">SUBMIT</button>
+	<div class="box">
+    	<p id="myP">TITLE</p>
+	</div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/user.js') }}"></script>
+<script src="{{ url_for('static', filename='js/info.js') }}"></script>
+{% endblock %}

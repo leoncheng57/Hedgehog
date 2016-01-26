@@ -16,11 +16,23 @@
 	     type="text" placeholder="Exploding Kittens..." />
       <br>
       <br>
-      Body: 
-      <br>
-      <textarea name="body" 
-		rows="4" cols="50" placeholder="How many cats does it take to build a rocket?...">
-      </textarea>
+
+      <!-- Body:  -->
+      <!-- <br> -->
+      <!-- <textarea name="body"  -->
+      <!-- 		rows="4" cols="50" placeholder="How many cats does it take to build a rocket?..."> -->
+      <!-- </textarea> -->
+
+      <div class="container">
+	<button onclick="myFunction()">EDIT DOC</button>
+	<button onclick="stop()">SUBMIT</button>
+	<br>
+	<div class="box" width="600" height="400" style="height: 100px;">
+    	  <p id="myP">Body <br>(Click Edit Doc. Then click here to start editing)<br><br><br><br><br><br></p>
+	</div>
+
+      </div>
+
       <br>
       Tag
       <input name="tag"
@@ -31,7 +43,7 @@
     </div>
   
   <!-- Box for assisted search -->
-  <div class="assisted-search" align="right">
+  <div class="assisted-search" align="center">
     <object data="/search" width="600" height="400"> <embed src="/search" width="600" height="400"> </embed> Error: Embedded data could not be displayed. </object>
     <!--<object type="text/html" data="search" width="250px" height="500px" style="overflow:auto;border:5px ridge blue"><center>-->
   </div>
