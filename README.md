@@ -50,3 +50,4 @@ Hedgehog.
   - [ ] Find relevant pictures
   - [ ] Maybe Design it like a meme
 - [ ] YouTube Video of project: (insert link here when complete)
+- [ ] Host site on digital ocean for all to see
