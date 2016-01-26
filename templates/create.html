@@ -17,24 +17,25 @@
 	<br>
 	<br>
 
-	<!-- Body: -->
-	<!-- <br> -->
-	<!-- <textarea name="body" -->
-	<!-- 		rows="4" cols="50" placeholder="How many cats does it take to build a rocket?..."> -->
-	<!-- </textarea> -->
+	Body:
+	<br>
+	<textarea name="body"
+			rows="4" cols="50" placeholder="How many cats does it take to build a rocket?...">
+	</textarea>
 
-	<div class="container">
-	  <button onclick="myFunction()">EDIT BODY</button>
-	  <button onclick="stop()">SAVE BODY</button>
-	  <br><br>
-	  <div class="box" name="body" align="left" 
-	       style="width:500px; height: 170px; border:1px solid black;">
-    	    <p id="myP">
-	      (Insert Body Here...)
-	    </p>
-	  </div>
+	<!-- Editable Box not working nicely with db -->
+	<!-- <div class="container"> -->
+	<!--   <button onclick="myFunction()">EDIT BODY</button> -->
+	<!--   <button onclick="stop()">SAVE BODY</button> -->
+	<!--   <div class="box" align="left" -->
+	<!--        style="width:500px; height: 170px; border:1px solid black;"> -->
+    	<!--     <p id="myP" name="body" -->
+	<!-- 	      style="width:500px; height: 170px;"> -->
+	<!--       (Insert Body Here...) -->
+	<!--     </p> -->
+	<!--   </div> -->
 	  
-	</div>
+	<!-- </div> -->
 
 	<br>
 	Tag
@@ -44,13 +45,21 @@
 	<input type="submit" name="submit" />
       </form>
     </div>
+
+    <hr>
     
     <!-- Box for assisted search -->
-    <div class="assisted-search" align="center">
-      <object data="/search" width="600" height="400"> <embed src="/search" width="600" height="400"> </embed> Error: Embedded data could not be displayed. </object>
+    <div class="assisted-search" align="center"
+	 style="width:500px; height: 200px; border:5px solid black;">
+      <object data="/search" style="width:500px; height: 200px;"> 
+	<embed src="/search"> </embed> 
+	<!-- Error: Embedded data could not be displayed. -->
+      </object>
       <!--<object type="text/html" data="search" width="250px" height="500px" style="overflow:auto;border:5px ridge blue"><center>-->
     </div>
   </div>
+
+  <br><br>
   {% endblock %}
 
 
