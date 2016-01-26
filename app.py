@@ -67,6 +67,12 @@ def display_infos():
 def database_admin():
     return render('database_admin.html')
 
+@app.route('/displaying', methods=["GET"])
+@app.route('/displaying/', methods=["GET"])
+@require_login
+def displaying():
+    return render('displaying.html')
+
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
 def search():
