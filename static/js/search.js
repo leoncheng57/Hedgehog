@@ -1,5 +1,5 @@
-document.getElementById('tags-search').addEventListener('keyup', function(e) {queryDatabase(e, 'tags')});
-document.getElementById('info-search').addEventListener('keyup', function(e) {queryDatabase(e, 'info')});
+$('#tags-search').keyup( function(e) {queryDatabase(e, 'tags')});
+$('#info-search').keyup( function(e) {queryDatabase(e, 'info')});
 
 function queryDatabase(e, type) {
   if (e.keyCode == 13) {

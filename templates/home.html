@@ -1,81 +1,81 @@
 {% extends 'base.html' %}
 
-
 {% block title %}Hedgehog{% endblock %}
 
 {% block content %}
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Subjects</h1>
-                        <div class="container">
-                            <table class="table table-hover borderless" style="width:75%;">
-                                <tr>
-                                    <td style="text-align: right; padding-right:50px"><a href="#">
-                                        <img src="{{ url_for('static', filename='img/atom18.png') }}" style="height: 60px;"
-                                        alt="science"></a>
-                                    <td style="text-align:left"><a href="#" style="color:black; text-decoration:none"><br>SCIENCE</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right; padding-right:50px"><a href="#">
-                                        <img src="{{ url_for('static', filename='img/university7.png') }}" style="height: 60px;"
-                                        alt="science"></a>
-                                    <td style="text-align:left"><a href="#" style="color:black; text-decoration:none"><br>SOCIAL STUDIES</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right; padding-right:50px"><a href="#">
-                                        <img src="{{ url_for('static', filename='img/pencil66.png') }}" style="height: 60px;"
-                                        alt="science"></a>
-                                    <td style="text-align:left"><a href="#" style="color:black; text-decoration:none"><br>ENGLISH</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right; padding-right:50px"><a href="#">
-                                        <img src="{{ url_for('static', filename='img/calculator44.png') }}" style="height: 60px;"
-                                        alt="science"></a>
-                                    <td style="text-align:left"><a href="#" style="color:black; text-decoration:none"><br>MATHEMATICS</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right; padding-right:50px"><a href="#">
-                                        <img src="{{ url_for('static', filename='img/painter11.png') }}" style="height: 60px;"
-                                        alt="science"></a>
-                                    <td style="text-align:left"><a href="#" style="color:black; text-decoration:none"><br>ART</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right; padding-right:50px"><a href="#">
-                                        <img src="{{ url_for('static', filename='img/earth180.png') }}" style="height: 60px;"
-                                        alt="science"></a>
-                                    <td style="text-align:left"><a href="#" style="color:black; text-decoration:none"><br>FOREIGN LANGUAGE</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right; padding-right:50px"><a href="#">
-                                        <img src="{{ url_for('static', filename='img/code26.png') }}" style="height: 60px;"
-                                        alt="science"></a>
-                                    <td style="text-align:left"><a href="#" style="color:black; text-decoration:none"><br>COMPUTER SCIENCE</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h1>Subjects</h1>
+      <div class="container">
+        <table class="table table-hover borderless" style="width:75%;">
+          <tr>
+            <td style="text-align: right; padding-right:50px">
+              <a href="javascript:;"><img src="{{ url_for('static', filename='img/tags/science.png') }}" style="height: 60px;" alt="science"></a>
+            </td>
+            <td style="text-align:left">
+              <a href="javascript:;" style="color:black; text-decoration:none"><br>SCIENCE</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right; padding-right:50px">
+              <a href="javascript:;"><img src="{{ url_for('static', filename='img/tags/history.png') }}" style="height: 60px;" alt="science"></a>
+            </td>
+            <td style="text-align:left">
+              <a href="javascript:;" style="color:black; text-decoration:none"><br>SOCIAL STUDIES</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right; padding-right:50px">
+              <a href="javascript:;"><img src="{{ url_for('static', filename='img/tags/english.png') }}" style="height: 60px;" alt="science"></a>
+            </td>
+            <td style="text-align:left">
+              <a href="javascript:;" style="color:black; text-decoration:none"><br>ENGLISH</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right; padding-right:50px">
+              <a href="javascript:;"><img src="{{ url_for('static', filename='img/tags/math.png') }}" style="height: 60px;" alt="science"></a>
+            </td>
+            <td style="text-align:left">
+              <a href="javascript:;" style="color:black; text-decoration:none"><br>MATHEMATICS</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right; padding-right:50px">
+              <a href="javascript:;"><img src="{{ url_for('static', filename='img/tags/art.png') }}" style="height: 60px;" alt="science"></a>
+            </td>
+            <td style="text-align:left">
+              <a href="#" style="color:black; text-decoration:none"><br>ART</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right; padding-right:50px">
+              <a href="javascript:;"><img src="{{ url_for('static', filename='img/tags/language.png') }}" style="height: 60px;" alt="science"></a>
+            </td>
+            <td style="text-align:left">
+              <a href="javascript:;" style="color:black; text-decoration:none"><br>FOREIGN LANGUAGE</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: right; padding-right:50px">
+              <a href="javascript:;"><img src="{{ url_for('static', filename='img/tags/compsci.png') }}" style="height: 60px;" alt="science"></a>
+            </td>
+            <td style="text-align:left">
+              <a href="#" style="color:black; text-decoration:none"><br>COMPUTER SCIENCE</a>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <!-- THIS NEEDS TO BE INCLUDED IN THE FOOTER BECAUSE I GOT THE VECTOR ICONS FOR FREE -->
-    <!--
-    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>Hedgehog is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
-    -->
-    <!-- /#wrapper -->
+  </div>
+</div>
+<!-- /#page-content-wrapper -->
+
+<!-- THIS NEEDS TO BE INCLUDED IN THE FOOTER BECAUSE I GOT THE VECTOR ICONS FOR FREE -->
+<!--
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>Hedgehog is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+-->
+<!-- /#wrapper -->
 {% endblock %}
 
-{% block scripts %}
-<script src="{{ url_for('static', filename='js/user.js') }}"></script>
-{% endblock %}
