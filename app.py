@@ -9,7 +9,7 @@ app = flask.Flask(__name__)
 user = util.UserAbstraction(flask.session)
 s = flask.session
 r = flask.request
-srcs = search.getSources()
+# srcs = search.getSources()
 
 # Decorators and Wrappers
 def require_login(view):
