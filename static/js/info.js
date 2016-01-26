@@ -61,8 +61,6 @@ function getTags() {
             $('<td>').append(i)
           ).append(
             $('<td>').append(tag.name)
-          ).append(
-            $('<td>').append(tag._id.$oid)
           )
         );
       });
@@ -83,11 +81,7 @@ function getInfo() {
           ).append(
             $('<td>').append(info.title)
           ).append(
-            $('<td>').append(info.author.$oid)
-          ).append(
             $('<td>').append(info.body)
-          ).append(
-            $('<td>').append(info._id.$oid)
           )
         );
       });
