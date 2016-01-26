@@ -1,9 +1,9 @@
 from flask import render_template
-import google, urllib2, bs4, re
+import google, urllib2, bs4, re, os.path
 
 def getSources(): #Putting all Outside Sources into list 'srcs'
     srcs = []
-    f = open("misc/Sources.txt", "r")
+    f = open(os.path.join(os.path.dirname(__file__), "misc/Sources.txt"), "r")
     for line in f:
         line = line[0:-1] #-1 is to remove the newline character
         line = line.replace("https","")
