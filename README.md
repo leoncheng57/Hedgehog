@@ -3,7 +3,7 @@
 <img src="static/img/splash.png">
 </p>
 
-[Insert Motto Here] (something witty about quills meaning hedgehog quills and writing quills)
+(Insert Motto Here) (something witty about quills meaning hedgehog quills and writing quills)
 
 
 ## What is Hedgehog?
@@ -52,4 +52,4 @@ Hedgehog.
   - [ ] Find relevant pictures
   - [ ] Maybe Design it like a meme
 - [ ] YouTube Video of project: (insert link here when complete)
-- [X] Host site on digital ocean for all to see: http://hedgehog.inside-the-house.com/
+- [X] Host site on digital ocean for all to see (http://hedgehog.inside-the-house.com/)
