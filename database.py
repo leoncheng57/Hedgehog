@@ -43,7 +43,7 @@ def get_child_tags(parent_id):
     return children
 
 # Info related functions
-def create_info(title, body, author_id, tag_list):
+def create_info(title, body, author_id, tag_list=[]):
     author_id = ObjectId(author_id)
     result = info.insert_one({
         'title': title,

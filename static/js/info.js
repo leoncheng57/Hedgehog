@@ -65,6 +65,8 @@ function getInfo() {
 			$('<td>').append(info.title)
 		    ).append(
 			$('<td>').append(info.body)
+		    ).append(
+			$('<td>').append(info.tag)
 		    )
 		);
 	    });

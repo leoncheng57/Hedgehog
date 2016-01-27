@@ -134,12 +134,12 @@ def api(action, subaction=None):
                     data.get('title'),
                     data.get('body'),
                     user.id,
-                    [],
+                    data.get('tag').split(",")
                 )
                 return
-                if subaction == 'display_infos':
-                    l = get_all_info()
-                    return l
+            if subaction == 'display_infos':
+                l = get_all_info()
+                return l
     flask.abort(400)
 
 # Main Method
