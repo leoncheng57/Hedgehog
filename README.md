@@ -1,17 +1,19 @@
 # Hedgehog
-INSERT MOTTO HERE (something witty about quills meaning hedgehog quills and writing quills)
-
-
 <p align="center">
 <img src="static/img/splash.png">
 </p>
+
+[Insert Motto Here] (something witty about quills meaning hedgehog quills and writing quills)
 
 
 ## What is Hedgehog?
 Hedgehog is an easy to use and comprehensive study guide tool. It draws on information from a variety of sources and its wide pool of users. With Hedgehog, users can now effortlessly create their ideal study guide by choosing snippets of information (info cards) from the public database on Hedgehog. They are also able to contribute their own knowledge by creating their own info cards. Hedgehog even has an assisted search feature to sift through specific academic websites to facilitate searching for relevant information.
 
-In addition, Hedgehog strives to provide users with a mnemonic generator tool. This tool intends to recieve an equation or expression from the user, and to return a random funky meme with a caption to help you memorize it. We know that humans are naturally better at remembering interesting and visual material.
+In addition, Hedgehog strives to provide users with a mnemonic generator tool. This tool intends to receive an equation or expression from the user, and to return a random funky meme with a caption to help you memorize it. We know that humans are naturally better at remembering interesting and visual material.
 <br>
+
+## Where To Find
+http://hedgehog.inside-the-house.com/
 
 ## Behing the Name
 A hodgepodge of Study Material.
@@ -21,7 +23,7 @@ Hedgehog.
 (Logic is not guaranteed.)
 
 ## Features
-- Login system
+- User Login system
 - Create Info Cards
 - Display Info Cards
 - Assisted Search Feature
@@ -35,7 +37,7 @@ Hedgehog.
   - [X] Info Cards
   - [ ] Study Sheets
   - [ ] Folders for sheets
-- [ ] Topic Organization System
+- [ ] Topic Organization System (with Tags)
  - [ ] Difficulty/Depth of information
  - [ ] Topics/Subtopics (by using tags)
  - [ ] Search feature to find info cards by tags or titles
@@ -50,4 +52,4 @@ Hedgehog.
   - [ ] Find relevant pictures
   - [ ] Maybe Design it like a meme
 - [ ] YouTube Video of project: (insert link here when complete)
-- [ ] Host site on digital ocean for all to see
+- [X] Host site on digital ocean for all to see: http://hedgehog.inside-the-house.com/
