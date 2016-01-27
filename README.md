@@ -1,6 +1,6 @@
 # Hedgehog
 
-### Find it Here! http://hedgehog.inside-the-house.com/
+## Find it Here! http://hedgehog.inside-the-house.com/
 
 <p align="center">
 <img src="static/img/splash.png">
@@ -15,7 +15,7 @@ Hedgehog is an easy to use and comprehensive study guide tool. It draws on infor
 In addition, Hedgehog strives to provide users with a mnemonic generator tool. This tool intends to receive an equation or expression from the user, and to return a random funky meme with a caption to help you memorize it. We know that humans are naturally better at remembering interesting and visual material.
 <br>
 
-## Behing the Name
+## Behind the Name
 A hodgepodge of Study Material.
 Hodgepodge.
 Hedgepodge.
