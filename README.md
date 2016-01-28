@@ -51,5 +51,5 @@ Hedgehog.
   - [ ] Make it sound like a sentence
   - [ ] Find relevant pictures
   - [ ] Maybe Design it like a meme
-- [ ] YouTube Video of project: (insert link here when complete)
+- [X] YouTube Video of project: (https://www.youtube.com/watch?v=hCkLKiRzNuE&feature=youtu.be)
 - [X] Host site on digital ocean for all to see (http://hedgehog.inside-the-house.com/)
