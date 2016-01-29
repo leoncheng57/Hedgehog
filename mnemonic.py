@@ -1,12 +1,8 @@
-#Credit to:
-#https://nlp.fi.muni.cz/projekty/random_word/index.html
-
 import urllib2, random, json, requests
 
-word_site = "https://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain"
-response = urllib2.urlopen(word_site)
-txt = response.read()
-all_words = txt.splitlines()
+words_file=open("misc/words.txt")
+txt = words_file.read()
+all_words=txt.splitlines()
 
 #Word Methods
 def get_word(letter):
@@ -14,7 +10,8 @@ def get_word(letter):
     for word in all_words:
         if (word[0] == letter.lower() or word[0] == letter.upper()):
             l.append(word)
-    return random.choice(l)    
+    print l
+    return random.choice(l)
 
 def parse_input(equation): 
     l = []
@@ -30,14 +27,8 @@ def parse_input(equation):
             ret.append("is")
         else:
             ret.append( get_word(letter) )
+    print ret
     return ret
-
-def get_phrase(equation):
-    ret = parse_input(equation)
-    retString = ""
-    for element in ret:
-        retString+=element+" "
-    return retString
 
 #Image Methods
 def get_single_image(search_term):
@@ -59,13 +50,22 @@ def get_single_image(search_term):
     pic_url="https://farm"+farm_id+".staticflickr.com/"+server_id+"/"+idd+"_"+secret+".jpg"
     return pic_url
 
-def get_images(equation):
+def get_images_and_phrase(equation):
     words = parse_input(equation)
+    #phrase
+    phrase = ""
+    for element in words:
+        phrase+=element+" "
+    #image urls
     if "is" in words != -1:
         words.remove("is")
     urls = []
     for w in words:
         urls.append( get_single_image(w) )
-    return urls
-    
-    
+    #both in one dict
+    d = {}
+    d["phrase"] = phrase
+    d["image_urls"] = urls
+    print urls
+    print phrase
+    return d
