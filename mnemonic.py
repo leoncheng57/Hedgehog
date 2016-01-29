@@ -16,7 +16,7 @@ def get_word(letter):
             l.append(word)
     return random.choice(l)    
 
-def get_phrase(equation):
+def parse_input(equation): 
     l = []
     i = 0
     while(i<len(equation)):
@@ -30,15 +30,17 @@ def get_phrase(equation):
             ret.append("is")
         else:
             ret.append( get_word(letter) )
+    return ret
+
+def get_phrase(equation):
+    ret = parse_input(equation)
     retString = ""
     for element in ret:
         retString+=element+" "
     return retString
 
-
-
 #Image Methods
-def get_image(search_term):
+def get_single_image(search_term):
     api_key="e955c136382fe3c3f1ae1d1a69ca3507"
     text=search_term
     safe_search="2"
@@ -57,8 +59,13 @@ def get_image(search_term):
     pic_url="https://farm"+farm_id+".staticflickr.com/"+server_id+"/"+idd+"_"+secret+".jpg"
     return pic_url
 
-##TESTING##
-print get_image("water")
+def get_images(equation):
+    words = parse_input(equation)
+    if "is" in words != -1:
+        words.remove("is")
+    urls = []
+    for w in words:
+        urls.append( get_single_image(w) )
+    return urls
     
-
-
+    

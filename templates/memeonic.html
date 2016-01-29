@@ -23,11 +23,12 @@
 
 <center>
 <h2>{{phrase}}</h2>
+{% for url in image_urls %}
+<img src={{url}} height="180" width="180">
+{% endfor %}
 </center>
 
 {% endif %}
-
-
 {% endblock %}
 
 

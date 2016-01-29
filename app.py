@@ -76,7 +76,8 @@ def memeonic():
     else:
         equation = r.form["equation"]
         phrase = mnemonic.get_phrase(equation)
-        return render("memeonic.html", page_type="result", phrase = phrase)
+        image_urls = mnemonic.get_images(equation)
+        return render("memeonic.html", page_type="result", phrase=phrase, image_urls=image_urls)
 
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
