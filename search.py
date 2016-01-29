@@ -15,7 +15,7 @@ def getSources(): #Putting all Outside Sources into list 'srcs'
     return srcs
 
 
-# def default(method, search_term, srcs):                                                      
+# def default(method, search_term, srcs):      
 #     d = {}
 #     if method == "GET":                                                              
 #         #return render("search.html", page_type="search")                               

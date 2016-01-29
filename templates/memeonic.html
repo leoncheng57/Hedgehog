@@ -6,20 +6,27 @@
 
 {% block content %}
 
+{% if page_type=="search" %}
 <center>
   <div class="container">
     <h1>Generate a Mnemonic Meme!</h1>
-    <form id="create-info">
-      <h4>Expression</h4>
-      <input name="expression"
-	     type="text" placeholder="F = ma" />
-      <br>
-      <input type="submit" name="submit" />
+    <h4>Expression</h4>
+    <form method="POST">
+      <input name="equation" type="text" placeholder="F = m a">
+      <p/>
+      <input type="submit" name="button" value="search">
     </form>
   </div>
 <br>
-(<u>Developer's Note</u>: This page is currently under construction. Submitting does not work.)
 </center>
+{% else %}
+
+<center>
+<h2>{{phrase}}</h2>
+</center>
+
+{% endif %}
+
 
 {% endblock %}
 

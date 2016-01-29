@@ -1,4 +1,4 @@
-import database, util, search
+import database, util, search, words
 import google
 
 from functools import wraps
@@ -49,12 +49,6 @@ def create():
     else:
         return render('create.html')
 
-@app.route('/memeonic')
-@app.route('/memeonic/')
-@require_login
-def memeonic():
-    return render('memeonic.html')
-
 @app.route('/display_infos')
 @app.route('/display_infos/')
 @require_login
@@ -72,6 +66,17 @@ def database_admin():
 @require_login
 def displaying():
     return render('displaying.html')
+
+@app.route("/memeonic", methods=["GET","POST"])
+@app.route("/memeonic/", methods=["GET","POST"])
+@require_login
+def memeonic():
+    if r.method == "GET":
+        return render("memeonic.html", page_type="search")
+    else:
+        equation = r.form["equation"]
+        phrase = words.get_phrase(equation)
+        return render("memeonic.html", page_type="result", phrase = phrase)
 
 @app.route("/search", methods=["GET","POST"])
 @app.route("/search/", methods=["GET","POST"])
