@@ -1,4 +1,4 @@
-import database, util, search, words
+import database, util, search, mnemonic
 import google
 
 from functools import wraps
@@ -75,7 +75,7 @@ def memeonic():
         return render("memeonic.html", page_type="search")
     else:
         equation = r.form["equation"]
-        phrase = words.get_phrase(equation)
+        phrase = mnemonic.get_phrase(equation)
         return render("memeonic.html", page_type="result", phrase = phrase)
 
 @app.route("/search", methods=["GET","POST"])
