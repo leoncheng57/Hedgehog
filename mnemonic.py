@@ -1,4 +1,4 @@
-import urllib2, random, json, requests
+import urllib2, random, json, requests, os.path
 
 words_file=open(os.path.join(os.path.dirname(__file__), "misc/words.txt"))
 txt = words_file.read()
