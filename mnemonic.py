@@ -1,6 +1,6 @@
 import urllib2, random, json, requests
 
-words_file=open("misc/words.txt")
+words_file=open(os.path.join(os.path.dirname(__file__), "misc/words.txt"))
 txt = words_file.read()
 all_words=txt.splitlines()
 
