@@ -49,9 +49,9 @@ Hedgehog.
   - [X] Maybe search through google for links, then parse links to only accept those that are on our good list of Outside Research Sources
   - [ ] Maybe use APIs of study sites (ex. Wikipedia) or use page scraping to get info from any study site website
 - [ ] Mnemonic Generator
-  - [ ] Generate Random Words
+  - [X] Generate Random Words
   - [ ] Make it sound like a sentence
-  - [ ] Find relevant pictures
-  - [ ] Maybe Design it like a meme
+  - [X] Find relevant pictures
+  - [X] Maybe Design it like a meme
 - [X] YouTube Video of project: (https://www.youtube.com/watch?v=hCkLKiRzNuE&feature=youtu.be)
 - [X] Host site on digital ocean for all to see (http://hedgehog.inside-the-house.com/)
