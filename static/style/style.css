@@ -172,3 +172,7 @@ table, td {
 .top {
       z-index: 2000;
 }
+
+.add-note {
+    font-size: 1.5em;
+}
