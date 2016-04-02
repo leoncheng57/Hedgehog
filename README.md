@@ -2,7 +2,7 @@
 
 ## Find it Here! http://hedgehog.inside-the-house.com/
 
-## YouTube Video! https://www.youtube.com/watch?v=hCkLKiRzNuE&feature=youtu.be
+## Video! https://www.youtube.com/watch?v=hCkLKiRzNuE&feature=youtu.be
 
 <p align="center">
 <img src="static/img/splash.png">

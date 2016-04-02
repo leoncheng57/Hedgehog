@@ -12,7 +12,7 @@
     <h1>Generate a Mnemonic Meme!</h1>
     <h4>Expression</h4>
     <form method="POST">
-      <input name="equation" type="text" placeholder="F = m a">
+      <input name="equation" type="text" placeholder="enter an expression like F = m a">
       <p/>
       <input type="submit" name="button" value="search">
     </form>
@@ -26,6 +26,15 @@
 {% for url in image_urls %}
 <img src={{url}} height="180" width="180">
 {% endfor %}
+<br>
+<br>
+<br>
+You can <i>refresh</i> the page if you want to generate another random Meme-onic using the same expression/equation
+<br>
+<br>
+or start over with a new expression <a href="{{url_for('memeonic')}}">here</a>
+<hr>
+(<u>Developer's Note</u>: Picture results sometimes do not match the word result, image accuracy to be improved)
 </center>
 
 {% endif %}
