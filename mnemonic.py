@@ -34,11 +34,13 @@ def parse_input(equation):
 def get_single_image(search_term):
     api_key="71ea7ff2868ab2377ee1d41cbe8ca082" #NOTE: THIS API KEY IS NOT PERMANENT, IT IS ONLY A SAMPLE KEY, MAY HAVE TO BE REPLACED VERY FEW WEEKS OR SO?
     text=search_term
+    tags=search_term
     safe_search="2"
     per_page="1"
     formmat="json"
     nojsoncallback="1"
-    url="https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+api_key+"&text="+text+"&safe_search="+safe_search+"&per_page="+per_page+"&format="+formmat+"&nojsoncallback="+nojsoncallback
+    relevance="relevance"
+    url="https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="+api_key+"&tags="+tags+"&text="+text+"&sort="+relevance+"&safe_search="+safe_search+"&per_page="+per_page+"&format="+formmat+"&nojsoncallback="+nojsoncallback
     response = requests.get(url)
     json_data = json.loads(response.text)
     #now that you have the json data, go get the pic url
